@@ -312,7 +312,7 @@ const RegisterBottom = () => {
     link: "",
     reason: "+998",
     courseType: "Course Type",
-    open: false
+    open: false,
   });
   const [paymentMethod, setPaymentMethod] = useState("");
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -335,47 +335,49 @@ const RegisterBottom = () => {
     try {
       // FormData yaratish
       const submitData = new FormData();
-      
+
       // APIga mos field nomlari
-      submitData.append('full_name', formData.link);
-      submitData.append('phone', formData.reason);
-      submitData.append('course_type', formData.courseType);
-      submitData.append('payment_method', paymentMethod);
-      
+      submitData.append("full_name", formData.link);
+      submitData.append("phone", formData.reason);
+      submitData.append("course_type", formData.courseType);
+      submitData.append("payment_method", paymentMethod);
+
       if (uploadedFile) {
-        submitData.append('payment_screenshot', uploadedFile);
+        submitData.append("payment_screenshot", uploadedFile);
       }
-      
-      submitData.append('verified', 'false');
+
+      submitData.append("verified", "false");
 
       // Backendga so'rov yuborish
-      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/register`, {
-        method: 'POST',
-        body: submitData,
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_BASE_URL}/payment/`,
+        {
+          method: "POST",
+          body: submitData,
+        }
+      );
 
       if (!response.ok) {
-        throw new Error('Server error');
+        throw new Error("Server error");
       }
 
       const result = await response.json();
-      
+
       // Muvaffaqiyatli javob
       setMessage("Muvaffaqiyatli ro'yxatdan o'tdingiz!");
-      
+
       // Formani tozalash
       setFormData({
         link: "",
         reason: "+998",
         courseType: "Course Type",
-        open: false
+        open: false,
       });
       setPaymentMethod("");
       setUploadedFile(null);
       setIsVisible(false);
-
     } catch (error) {
-      console.error('Xatolik:', error);
+      console.error("Xatolik:", error);
       setMessage("Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.");
     } finally {
       setIsLoading(false);
@@ -408,11 +410,13 @@ const RegisterBottom = () => {
 
             {/* Xabar ko'rsatish */}
             {message && (
-              <div className={`mb-4 p-3 rounded-md text-center ${
-                message.includes("Muvaffaqiyatli") 
-                  ? "bg-green-100 text-green-700 border border-green-300" 
-                  : "bg-red-100 text-red-700 border border-red-300"
-              }`}>
+              <div
+                className={`mb-4 p-3 rounded-md text-center ${
+                  message.includes("Muvaffaqiyatli")
+                    ? "bg-green-100 text-green-700 border border-green-300"
+                    : "bg-red-100 text-red-700 border border-red-300"
+                }`}
+              >
                 {message}
               </div>
             )}
@@ -479,26 +483,23 @@ const RegisterBottom = () => {
 
                   {formData.open && (
                     <ul className="absolute z-100 w-full mt-1 bg-white rounded-[8px] shadow-lg overflow-hidden">
-                      {[
-                        "Junior",
-                        "Middle",
-                        "Senior",
-                        "Master",
-                      ].map((option, idx) => (
-                        <li
-                          key={idx}
-                          onClick={() =>
-                            setFormData({
-                              ...formData,
-                              courseType: option,
-                              open: false,
-                            })
-                          }
-                          className="px-4 py-2 cursor-pointer transition-all hover:text-white hover:bg-gradient-to-r hover:from-[#1FB3F5] hover:to-[#6651FF]"
-                        >
-                          {option}
-                        </li>
-                      ))}
+                      {["Junior", "Middle", "Senior", "Master"].map(
+                        (option, idx) => (
+                          <li
+                            key={idx}
+                            onClick={() =>
+                              setFormData({
+                                ...formData,
+                                courseType: option,
+                                open: false,
+                              })
+                            }
+                            className="px-4 py-2 cursor-pointer transition-all hover:text-white hover:bg-gradient-to-r hover:from-[#1FB3F5] hover:to-[#6651FF]"
+                          >
+                            {option}
+                          </li>
+                        )
+                      )}
                     </ul>
                   )}
                 </div>
@@ -642,9 +643,13 @@ const RegisterBottom = () => {
                           />
                         </label>
                         <div className="border-dashed border-2 border-gray-400 p-2 rounded-[8px] bg-white flex-shrink-0">
-                          <button 
+                          <button
                             type="button"
-                            onClick={() => document.querySelector('input[type="file"]').click()}
+                            onClick={() =>
+                              document
+                                .querySelector('input[type="file"]')
+                                .click()
+                            }
                             className="px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-3 lg:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-[6px] text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] font-[400] hover:from-blue-600 hover:to-purple-700 transition-all"
                           >
                             Browse file
@@ -658,7 +663,7 @@ const RegisterBottom = () => {
 
               {/* Submit Button */}
               <div className="flex justify-center sm:justify-end mt-[40px]">
-                <button 
+                <button
                   type="submit"
                   disabled={isLoading}
                   className="uppercase w-full max-w-[251px] text-center py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-[6px] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-semibold hover:from-blue-600 hover:to-purple-700 transition-all disabled:opacity-50"
