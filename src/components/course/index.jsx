@@ -322,20 +322,6 @@ const CourseTypes = () => {
                 Fill in your details
               </h3>
 
-              {/* Success message */}
-              {success && (
-                <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
-                  Muvaffaqiyatli ro'yxatdan o'tdingiz! ✓
-                </div>
-              )}
-
-              {/* Error message */}
-              {error && (
-                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
-                  {error}
-                </div>
-              )}
-
               <div className="flex flex-col">
                 <label
                   htmlFor="fullName"
