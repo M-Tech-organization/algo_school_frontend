@@ -3,3 +3,18 @@
 body {
     font-family: "Be Vietnam Pro", sans-serif;
 }
+
+@media (max-width: 375px) {
+  .se-hide {
+    display: none !important;
+  }
+}
+
+/* scroll barni yashirish */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE va Edge */
+  scrollbar-width: none; /* Firefox */
+}

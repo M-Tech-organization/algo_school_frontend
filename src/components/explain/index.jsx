@@ -32,7 +32,7 @@ const Explain = () => {
       }}
     >
       {/* Title */}
-      <h3 className="font-medium uppercase text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] mb-[80px] text-center max-w-[1000px] mx-auto">
+      <h3 className="font-medium uppercase  leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] mb-[80px] text-center max-w-[1000px] mx-auto">
         <span className="bg-gradient-to-r from-[#1FB3F5] via-[#8FD9FA] to-[#FFFFFF] bg-clip-text text-transparent">
           Sahifani to’liq o’qimay
         </span>{" "}
@@ -145,14 +145,13 @@ const Explain = () => {
             Shoshiling! Joylar soni oz qolib bormoqda...
           </h3>
 
-          <div className="flex justify-center gap-[4px] mt-4 bg-white p-2 rounded-[12px] flex-nowrap">
+          <div className="flex justify-center gap-1 sm:gap-1.5 md:gap-2 mt-4 bg-white p-2 sm:p-3 md:p-4 rounded-[12px] flex-nowrap">
             {boxes.map((num) => {
               const id = `explain-t${num}`;
               return (
                 <div
                   key={id}
-                  className="flex-shrink-0"
-                  style={{ width: `calc((100% - 13*4px)/14)` }}
+                  className="flex-shrink-0 w-[20px] sm:w-[28px] md:w-[36px]"
                 >
                   <input
                     id={id}
@@ -163,18 +162,23 @@ const Explain = () => {
                   />
                   <label
                     htmlFor={id}
-                    className={`flex items-center justify-center aspect-square rounded-[6px] cursor-pointer
+                    className={`
+            flex items-center justify-center
+            aspect-square rounded-[6px] cursor-pointer
             bg-gradient-to-r transition-all duration-300
             ${
               selected.includes(num)
                 ? "from-[#1FB3F5] to-[#6651FF]"
                 : "from-[#F0F3FF] to-[#D9ECFF]"
-            } `}
+            }
+          `}
                   >
                     <svg
-                      className={`w-3/4 h-3/4 text-white transition-opacity duration-200 ${
-                        selected.includes(num) ? "opacity-100" : "opacity-0"
-                      }`}
+                      className={`
+              w-2/3 sm:w-3/4 md:w-4/5 h-2/3 sm:h-3/4 md:h-4/5
+              text-white transition-opacity duration-200
+              ${selected.includes(num) ? "opacity-100" : "opacity-0"}
+            `}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="3"

@@ -11,7 +11,7 @@ const RegisterBottom = () => {
   const [formData, setFormData] = useState({
     link: "",
     reason: "+998",
-    courseType: "Dropdown option",
+    courseType: "Course Type",
   });
   const [paymentMethod, setPaymentMethod] = useState("");
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -108,11 +108,12 @@ const RegisterBottom = () => {
                   </div>
 
                   {formData.open && (
-                    <ul className="absolute z-10 w-full mt-1 bg-white rounded-[8px] shadow-lg overflow-hidden">
+                    <ul className="absolute z-100 w-full mt-1 bg-white rounded-[8px] shadow-lg overflow-hidden">
                       {[
-                        "Dropdown option",
-                        "Dropdown option 1",
-                        "Dropdown option 2",
+                        "Junior",
+                        "Middle",
+                        "Senior",
+                        "Master",
                       ].map((option, idx) => (
                         <li
                           key={idx}
@@ -296,3 +297,4 @@ const RegisterBottom = () => {
 };
 
 export default RegisterBottom;
+
