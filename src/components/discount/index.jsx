@@ -39,11 +39,14 @@ const Discount = () => {
   }, []);
 
   const renderTimeCard = (value, label) => (
-    <div className="flex flex-col items-center">
-      <div className="w-[190px] h-[140px] bg-white rounded-t-[12px] flex items-center justify-center text-[58px] font-medium text-[#262626]">
+    <div className="flex flex-col items-center flex-1 min-w-[70px] sm:min-w-[120px] md:min-w-[190px]">
+      {/* Value box */}
+      <div className="w-full h-[100px] sm:h-[140px] md:h-[160px] bg-white rounded-t-[12px] flex items-center justify-center text-[1.5rem] sm:text-[2.5rem] md:text-[3.5rem] font-medium text-[#262626]">
         {value}
       </div>
-      <div className="w-[190px] h-[60px] bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] rounded-b-[12px] flex items-center justify-center text-white font-[400] text-[28px]">
+
+      {/* Label box */}
+      <div className="w-full h-[50px] sm:h-[60px] md:h-[70px] bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] rounded-b-[12px] flex items-center justify-center text-[0.75rem] sm:text-[1rem] md:text-[1.5rem] font-[400] text-white">
         {label}
       </div>
     </div>
@@ -60,7 +63,7 @@ const Discount = () => {
       }}
     >
       {/* Title */}
-      <h3 className="font-medium uppercase text-[40px] sm:text-[54px] mb-[50px] text-center max-w-[1000px] mx-auto">
+      <h3 className="font-medium uppercase text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] mb-[50px] text-center max-w-[1000px] mx-auto">
         <span className="bg-gradient-to-r from-[#1FB3F5] via-[#8FD9FA] to-[#FFFFFF] bg-clip-text text-transparent">
           Chegirma tugashiga
         </span>{" "}
@@ -68,7 +71,7 @@ const Discount = () => {
       </h3>
 
       {/* Countdown */}
-      <div className="max-w-[1000px] mx-auto flex flex-col sm:flex-row justify-center items-center gap-6 lg:gap-10">
+      <div className="max-w-[1000px] mx-auto flex justify-center items-center gap-4">
         {renderTimeCard(timeLeft.days, "Days")}
         {renderTimeCard(timeLeft.hours, "Hours")}
         {renderTimeCard(timeLeft.minutes, "Minutes")}

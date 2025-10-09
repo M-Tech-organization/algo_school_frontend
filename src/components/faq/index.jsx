@@ -35,8 +35,8 @@ const Faq = () => {
   };
 
   return (
-    <div className="max-w-[1000px] mx-auto mt-10 mb-[140px] px-4">
-      <h3 className="uppercase text-[#262626] text-[40px] sm:text-[54px] font-semibold text-center mb-[60px]">
+    <div className="max-w-[1000px] mx-auto md:mt-10 mt-0 mb-[70px] md:mb-[140px] px-4">
+      <h3 className="uppercase text-[#262626] text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] font-semibold text-center mb-[60px]">
         Frequently asked{" "}
         <span className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
           questions
@@ -50,25 +50,25 @@ const Faq = () => {
             <div
               key={item.id}
               onClick={() => toggleFaq(item.id)}
-              className={`p-[2px] rounded-lg cursor-pointer 
-    transition-all duration-500 ease-in-out
-    ${
-      isActive
-        ? "bg-gradient-to-r from-[#6651FF] to-[#1FB3F5]"
-        : "bg-[#D9D9D9] hover:bg-gradient-to-r hover:from-[#6651FF] hover:to-[#1FB3F5]"
-    }`}
+              className={`p-[2px] rounded-lg cursor-pointer transition-all duration-500 ease-in-out
+          ${
+            isActive
+              ? "bg-gradient-to-r from-[#6651FF] to-[#1FB3F5]"
+              : "bg-[#D9D9D9] hover:bg-gradient-to-r hover:from-[#6651FF] hover:to-[#1FB3F5]"
+          }`}
             >
-              <div className="bg-white rounded-md px-[44px] py-[24px]">
+              <div className="bg-white rounded-md px-4 sm:px-6 md:px-10 py-4 sm:py-6 md:py-8">
                 <div className="flex justify-between items-center">
-                  <h3 className="sm:text-[38px] text-[18px] font-semibold text-[#1A1A1A]">
+                  <h3 className="text-[16px] sm:text-[22px] md:text-[28px] lg:text-[38px] font-semibold text-[#1A1A1A] pr-4 flex-1">
                     {item.question}
                   </h3>
                   <span
-                    className={`text-[30px] font-bold transition-transform duration-300 border border-[#4C4C4D] rounded-full w-[36px] h-[36px] flex items-center justify-center ${
-                      isActive
-                        ? "rotate-45 text-[#6651FF] border-[#6651FF]"
-                        : "rotate-0 text-[#262626]"
-                    }`}
+                    className={`flex-shrink-0 text-[20px] sm:text-[24px] md:text-[28px] lg:text-[30px] font-bold transition-transform duration-300 border border-[#4C4C4D] rounded-full w-[30px] sm:w-[34px] md:w-[36px] h-[30px] sm:h-[34px] md:h-[36px] flex items-center justify-center 
+      ${
+        isActive
+          ? "rotate-45 text-[#6651FF] border-[#6651FF]"
+          : "rotate-0 text-[#262626]"
+      }`}
                   >
                     <X />
                   </span>
@@ -76,13 +76,14 @@ const Faq = () => {
 
                 {/* Answer with smooth animation */}
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    isActive
-                      ? "max-h-[500px] opacity-100 mt-3"
-                      : "max-h-0 opacity-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-500 ease-in-out 
+              ${
+                isActive
+                  ? "max-h-[500px] opacity-100 mt-3"
+                  : "max-h-0 opacity-0"
+              }`}
                 >
-                  <p className="text-[#4C4C4D] font-[400] text-[28px] leading-relaxed">
+                  <p className="text-[#4C4C4D] font-[400] text-[14px] sm:text-[18px] md:text-[22px] lg:text-[28px] leading-relaxed">
                     {item.answer}
                   </p>
                 </div>

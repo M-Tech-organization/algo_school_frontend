@@ -7,125 +7,143 @@ import logo2 from "../../assets/logo2.svg";
 const Navbar = () => {
   const [showTop, setShowTop] = useState(true);
   const boxes = Array.from({ length: 14 }, (_, i) => i + 1);
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState([1, 2]);
 
   const handleSelect = (num) => {
     if (selected.includes(num)) {
-      // agar allaqachon bosilgan bo‘lsa — o‘chirib tashlaymiz
       setSelected(selected.filter((n) => n !== num));
     } else {
-      // agar hali tanlanmagan bo‘lsa
       if (selected.length < 2) {
         setSelected([...selected, num]);
       } else {
-        // agar 2 tadan oshsa — birinchisini olib tashlab yangisini qo‘shamiz
         setSelected([selected[1], num]);
       }
     }
   };
 
   return (
-    <div className="mx-4 relative">
-      {/* Top */}
-      {showTop && (
-        <div className="bg-gradient-to-r mt-5 from-[#1FB3F5] to-[#6651FF] rounded-[8px] py-[14px] flex justify-center items-center gap-[20px] absolute top-0 left-0 w-full z-10">
-          <h1 className="text-center text-white font-[400] text-[18px]">
-            IT Courses 🌟 Sale Ends Soon, Get It Now
-          </h1>
-          <a
-            onClick={() => {
-              document
-                .getElementById("course")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="cursor-pointer"
-            aria-label="Get it now"
-          >
-            <ArrowRight className="text-white" size={24} />
-          </a>
+    <div className="w-full ">
+      <div className="relative mx-2 sm:mx-3 lg:mx-4">
+        {/* Top Banner */}
+        {showTop && (
+          <div className="bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] rounded-[8px] mt-4 py-3 px-4 flex items-center justify-between gap-3 absolute top-0 left-0 w-full z-50">
+            <h1 className="text-white font-normal text-xs sm:text-sm md:text-base flex-1 text-center">
+              IT Courses 🌟 Sale Ends Soon, Get It Now
+            </h1>
 
-          <div
-            onClick={() => setShowTop(false)}
-            className="cursor-pointer absolute right-5"
-            aria-label="Close"
-          >
-            <X size={24} className="text-white" />
+            <button
+              onClick={() => {
+                document
+                  .getElementById("course")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="flex-shrink-0"
+              aria-label="Get it now"
+            >
+              <ArrowRight className="text-white w-5 h-5" />
+            </button>
+
+            <button
+              onClick={() => setShowTop(false)}
+              className="flex-shrink-0"
+              aria-label="Close"
+            >
+              <X className="text-white w-5 h-5" />
+            </button>
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
-      {/* Bottom */}
-      <div className="pt-[100px] py-[23px] flex justify-between items-center z-0">
-        <div className="relative max-w-[1000px] mx-auto px-4 py-[100px] text-center">
-          <img
-            src={line}
-            alt="Abstrakt Line"
-            className="absolute top-[70px] left-[120px] w-[30px]"
-          />
+      {/* Hero Section */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-[150px] sm:pt-[200px] pb-8">
+        <div className="max-w-5xl mx-auto">
+          {/* Line decoration */}
+          <div className="relative">
+            <img
+              src={line}
+              alt="Line"
+              className="absolute -top-[25px] left-4 sm:left-30 w-6 sm:w-8 z-0 pointer-events-none"
+            />
+          </div>
 
-          <div className="max-w-[700px] px-4 mx-auto flex flex-col items-center bg-[#FCFCFD]  border border-[#E6E6E6] rounded-[11px] py-[19px] mb-[20px] relative z-10">
-            {/* Rasm va Unlock Your bir qatorda */}
-            <div className="flex items-center gap-4 mb-4">
-              <img src={logo2} alt="Icon" className="w-[50px] h-auto" />
-              <span className="text-[58px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
+          {/* Title Card */}
+          <div className="relative bg-white border border-gray-200 rounded-xl p-4 sm:p-6 mb-8 sm:mb-12 z-10 max-w-[713px] w-[292px] sm:w-full mx-auto">
+            {/* Logo + Unlock Your */}
+            <div className="flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
+              <img
+                src={logo2}
+                alt="Logo"
+                className="w-8 h-8 sm:w-12 sm:h-12 flex-shrink-0"
+              />
+              <span className="text-3xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
                 Unlock
               </span>
-              <span className="text-[58px] font-bold text-[#262626]">Your</span>
+              <span className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-800 flex-shrink-0">
+                Your
+              </span>
             </div>
 
-            {/* Pastdagi matn */}
-            <h2 className="text-[58px] font-bold text-[#262626] leading-[1.1] text-center">
+            {/* Potential Value */}
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-800 text-center mt-4 sm:mt-6">
               Potential Value
             </h2>
           </div>
 
-          <div className="mt-[100px]">
-            <img className="w-full h-auto" src={hero1} alt="Image" />
-            <p className="text-[24px] text-[#4C4C4D] font-[400] mt-[80px] max-w-[1100px] mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor.
-            </p>
+          {/* Hero Image */}
+          <div className="mb-8 sm:mb-12">
+            <img src={hero1} alt="Hero" className="w-full h-auto rounded-lg" />
+          </div>
 
-            <button className="relative cursor-pointer my-[40px] w-full max-w-[500px] h-[100px] rounded-[12px] text-white font-bold text-[38px] overflow-hidden transition-all duration-300 hover:text-[#262626]">
-              {/* Gradient border */}
-              <span className="absolute inset-0 rounded-[12px] bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-[2px]">
-                {/* Inner white bg on hover */}
-                <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 hover:bg-white">
+          {/* Description */}
+          <p className="text-base sm:text-xl lg:text-2xl text-gray-600 text-center mb-6 sm:mb-10 max-w-4xl mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor.
+          </p>
+
+          {/* Register Button */}
+          <div className="flex justify-center mb-8 sm:mb-12">
+            <button className="relative w-full sm:w-auto min-w-[280px] sm:min-w-[400px] h-16 sm:h-24 rounded-xl text-white font-bold text-xl sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group">
+              <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-0.5">
+                <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 group-hover:bg-white">
                   Register Now
                 </span>
               </span>
             </button>
           </div>
 
-          <h3 className="text-[#262626] font-[500] text-[38px]">
+          {/* Urgency Text */}
+          <h3 className="text-gray-800 font-medium text-xl sm:text-3xl lg:text-4xl text-center mb-6 sm:mb-8">
             Shoshiling! Joylar soni oz qolib bormoqda...
           </h3>
 
-          {/* Checkboxlar */}
-          <div className="flex flex-wrap gap-3 mt-[35px] justify-center">
+          {/* Checkboxes in one row */}
+          <div className="flex justify-center gap-0.5 sm:gap-1 md:gap-2 w-full flex-nowrap">
             {boxes.map((num) => (
-              <div key={num} className="flex items-center">
+              <div key={num} className="flex-shrink-0">
                 <input
-                  id={`t${num}`}
+                  id={`checkbox-${num}`}
                   type="checkbox"
                   checked={selected.includes(num)}
                   onChange={() => handleSelect(num)}
                   className="sr-only peer"
                 />
                 <label
-                  htmlFor={`t${num}`}
-                  className={`inline-flex items-center justify-center w-[36px] h-[36px]
-                    rounded-[6px] cursor-pointer 
-                    bg-gradient-to-r transition-all duration-300
-                    ${
-                      selected.includes(num)
-                        ? "from-[#1FB3F5] to-[#6651FF]"
-                        : "from-[#F0F3FF] to-[#D9ECFF]"
-                    }`}
+                  htmlFor={`checkbox-${num}`}
+                  className={`
+          flex items-center justify-center
+          w-5 sm:w-6 md:w-9
+          h-5 sm:h-6 md:h-9
+          rounded-lg cursor-pointer
+          bg-gradient-to-r transition-all duration-300
+          ${
+            selected.includes(num)
+              ? "from-[#1FB3F5] to-[#6651FF]"
+              : "from-[#F0F3FF] to-[#D9ECFF]"
+          }
+        `}
                 >
-                  {/* Check belgisi */}
                   <svg
-                    className={`w-5 h-5 text-white transition-opacity duration-200 ${
+                    className={`w-2.5 sm:w-4 md:w-5 h-2.5 sm:h-4 md:h-5 text-white transition-opacity duration-200 ${
                       selected.includes(num) ? "opacity-100" : "opacity-0"
                     }`}
                     fill="none"
