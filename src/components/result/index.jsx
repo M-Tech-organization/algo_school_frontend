@@ -20,7 +20,7 @@ const Result = () => {
         <img
           src={results}
           alt="Result Overlay"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] md:w-[800px] h-auto object-contain z-10"
+          className="absolute rounded-[12px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] md:w-[800px] h-auto object-contain z-10"
         />
       </div>
     </div>

@@ -3,6 +3,8 @@ import { ArrowRight, X } from "lucide-react";
 import hero1 from "../../assets/hero1.png";
 import line from "../../assets/line.png";
 import logo2 from "../../assets/logo2.svg";
+import top from "../../assets/top.png";
+import bottom from "../../assets/bottom.png";
 
 const Navbar = () => {
   const [showTop, setShowTop] = useState(true);
@@ -63,7 +65,7 @@ const Navbar = () => {
                     .getElementById("course")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex-shrink-0"
+                className="flex-shrink-0 cursor-pointer"
                 aria-label="Get it now"
               >
                 <ArrowRight className="text-white w-5 h-5" />
@@ -82,7 +84,7 @@ const Navbar = () => {
         )}
       </div>
       {/* Hero Section */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 pt-[150px] sm:pt-[150px] pb-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-[150px] sm:pt-[150px] pb-[92px]">
         <div className="max-w-5xl mx-auto">
           {/* Line decoration */}
           <div className="relative">
@@ -94,13 +96,13 @@ const Navbar = () => {
           </div>
 
           {/* Title Card */}
-          <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:p-6 mb-8 sm:mb-12 z-10 w-[220px] xs:w-[260px] max-w-[713px] sm:w-full mx-auto">
+          <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:p-6 mb-8 sm:mb-[80px] z-10 w-[220px] xs:w-[260px] max-w-[713px] sm:w-full mx-auto">
             {/* Logo + Unlock Your */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
               <img
                 src={logo2}
                 alt="Logo"
-                className="w-8 h-8 sm:w-12 sm:h-12 flex-shrink-0"
+                className="w-8 h-8 sm:w-[70px] sm:h-[70px] flex-shrink-0"
               />
               <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
                 Unlock
@@ -142,6 +144,16 @@ const Navbar = () => {
                   Register Now
                 </span>
               </span>
+              <img
+                className="absolute top-0 right-[26px]"
+                src={top}
+                alt="Image"
+              />
+              <img
+                className="absolute bottom-0 left-[16px] "
+                src={bottom}
+                alt="Image"
+              />
             </button>
           </div>
 
@@ -164,13 +176,7 @@ const Navbar = () => {
                 <label
                   aria-label={`Box ${num}`}
                   htmlFor={`checkbox-${num}`}
-                  className={`
-    flex items-center justify-center
-    w-5 sm:w-6 md:w-9
-    h-5 sm:h-6 md:h-9
-    rounded-lg cursor-pointer
-    bg-gradient-to-r
-    transition-all duration-500
+                  className={`flex items-center justify-center w-5 sm:w-6 md:w-9 h-5 sm:h-6 md:h-9 rounded-lg cursor-pointer bg-gradient-to-r transition-all duration-500
     ${
       selected.includes(num)
         ? "from-[#1FB3F5] to-[#6651FF]"

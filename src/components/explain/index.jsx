@@ -1,6 +1,8 @@
 import explain from "../../assets/explain.png";
 import check from "../../assets/check.svg";
 import { useEffect, useState } from "react";
+import top from "../../assets/top.png";
+import bottom from "../../assets/bottom.png";
 
 const Explain = () => {
   const boxes = Array.from({ length: 14 }, (_, i) => i + 1);
@@ -183,6 +185,16 @@ const Explain = () => {
                 Register Now
               </span>
             </span>
+            <img
+              className="absolute top-0 right-[26px]"
+              src={top}
+              alt="Image"
+            />
+            <img
+              className="absolute bottom-0 left-[16px] "
+              src={bottom}
+              alt="Image"
+            />
           </button>
         </div>
       </div>

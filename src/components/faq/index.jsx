@@ -63,7 +63,7 @@ const Faq = () => {
                     {item.question}
                   </h3>
                   <span
-                    className={`flex-shrink-0 text-[20px] sm:text-[24px] md:text-[28px] lg:text-[30px] font-bold transition-transform duration-300 border border-[#4C4C4D] rounded-full w-[30px] sm:w-[34px] md:w-[36px] h-[30px] sm:h-[34px] md:h-[36px] flex items-center justify-center 
+                    className={`flex-shrink-0 text-[20px] sm:text-[24px] md:text-[28px] lg:text-[30px] font-bold transition-transform duration-300 border border-[#D9D9D9] rounded-full w-[30px] sm:w-[34px] md:w-[36px] h-[30px] sm:h-[34px] md:h-[36px] flex items-center justify-center 
       ${
         isActive
           ? "rotate-45 text-[#6651FF] border-[#6651FF]"
