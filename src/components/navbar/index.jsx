@@ -89,12 +89,12 @@ const Navbar = () => {
             <img
               src={line}
               alt="Line"
-              className="absolute -top-[25px] left-4 sm:left-30 w-6 sm:w-8 z-0 pointer-events-none"
+              className="absolute -top-[20px] xs:-top-[25px] left-2 xs:left-4 sm:left-8 md:left-28 w-5 xs:w-6 sm:w-8 z-0 pointer-events-none"
             />
           </div>
 
           {/* Title Card */}
-          <div className="relative bg-white border border-gray-200 rounded-xl p-4 sm:p-6 mb-8 sm:mb-12 z-10 max-w-[713px] w-[292px] sm:w-full mx-auto">
+          <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:p-6 mb-8 sm:mb-12 z-10 w-[220px] xs:w-[260px] max-w-[713px] sm:w-full mx-auto">
             {/* Logo + Unlock Your */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
               <img
@@ -102,16 +102,16 @@ const Navbar = () => {
                 alt="Logo"
                 className="w-8 h-8 sm:w-12 sm:h-12 flex-shrink-0"
               />
-              <span className="text-3xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
+              <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
                 Unlock
               </span>
-              <span className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-800 flex-shrink-0">
+              <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 flex-shrink-0">
                 Your
               </span>
             </div>
 
             {/* Potential Value */}
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-800 text-center mt-4 sm:mt-6">
+            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 text-center mt-4 sm:mt-6">
               Potential Value
             </h2>
           </div>
@@ -129,7 +129,14 @@ const Navbar = () => {
 
           {/* Register Button */}
           <div className="flex justify-center mb-8 sm:mb-12">
-            <button className="relative w-full sm:w-auto min-w-[280px] sm:min-w-[400px] h-16 sm:h-24 rounded-xl text-white font-bold text-xl sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group">
+            <button
+              onClick={() => {
+                document.getElementById("course").scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className="relative w-full sm:w-auto min-w-[280px] sm:min-w-[400px] h-16 sm:h-24 rounded-xl text-white font-bold text-xl sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group"
+            >
               <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-0.5">
                 <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 group-hover:bg-white">
                   Register Now
@@ -144,7 +151,7 @@ const Navbar = () => {
           </h3>
 
           {/* Checkboxes in one row */}
-          <div className="flex justify-center gap-0.5 sm:gap-1 md:gap-2 w-full flex-nowrap">
+          <div className="flex justify-center gap-0.5 sm:gap-1 md:gap-2 w-full flex-wrap">
             {boxes.map((num) => (
               <div key={num} className="flex-shrink-0">
                 <input
@@ -155,6 +162,7 @@ const Navbar = () => {
                   className="sr-only peer"
                 />
                 <label
+                  aria-label={`Box ${num}`}
                   htmlFor={`checkbox-${num}`}
                   className={`
     flex items-center justify-center

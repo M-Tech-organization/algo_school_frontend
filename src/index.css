@@ -18,3 +18,29 @@ body {
   -ms-overflow-style: none; /* IE va Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* ======== CHIROYLI SCROLLBAR (Desktop) ======== */
+
+/* WebKit — Chrome, Safari, Edge uchun */
+::-webkit-scrollbar {
+  width: 10px;               /* Scroll kengligi */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f3ff;       /* Scroll orqa foni */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1FB3F5, #6651FF); /* Gradient rang */
+  border-radius: 12px;       /* Burchaklarni yumaloqlash */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #32c4ff, #7b6fff); /* Hover bo‘lganda rang */
+}
+
+/* Firefox uchun */
+html {
+  scrollbar-width: thin; /* thin yoki auto */
+  scrollbar-color: #6651FF #f0f3ff; /* thumb va track rangi */
+}

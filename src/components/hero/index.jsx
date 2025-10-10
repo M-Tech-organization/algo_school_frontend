@@ -3,11 +3,10 @@ import information from "../../assets/information.png";
 const Hero = () => {
   return (
     <div
-      className="w-full relative text-white flex flex-col justify-center px-6
-             h-[900px] sm:h-[950px] md:h-[1000px] lg:h-[1304px]"
+      className="w-full relative text-white flex flex-col justify-center px-6 h-[1304px]"
       style={{
         backgroundImage: `url(${information})`,
-        backgroundSize: "100% 100%", 
+        backgroundSize: "100% 100%",
         backgroundPosition: "center",
       }}
     >

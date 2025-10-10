@@ -207,12 +207,12 @@ const CourseTypes = () => {
       />
 
       <div className="max-w-[1000px] mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
+        <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
           <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             COURSE
           </span>{" "}
           <span className="text-gray-800">TYPES</span>
-        </h1>
+        </h3>
 
         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
           {/* Tabs */}
@@ -245,21 +245,23 @@ const CourseTypes = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-40 items-center">
             {/* Image block */}
-            <div className="bg-gray-200 rounded-2xl max-w-[380px] w-full h-64 md:h-[410px] flex items-center justify-center mx-auto md:mx-0 order-first md:order-last">
-              <div className="text-gray-400 text-6xl">📚</div>
+            <div className="bg-gray-200 rounded-2xl  max-w-[300px] xs:max-w-[340px] sm:max-w-[380px]  w-full  h-48 xs:h-56 sm:h-64 md:h-[410px]  flex items-center justify-center  mx-auto md:mx-0  order-first md:order-last">
+              <div className="text-gray-400 text-4xl xs:text-5xl sm:text-6xl md:text-7xl">
+                📚
+              </div>
             </div>
 
             {/* Content block */}
             <div>
-              <h3 className="text-[28px] md:text-[32px] font-semibold text-[#262626] mb-4">
+              <h3 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold text-[#262626] mb-4">
                 {currentCourse.title}
               </h3>
               <div className="flex flex-wrap items-baseline gap-2 mb-6">
-                <span className="text-[28px] md:text-[38px] line-through font-semibold text-[#FD5A5A]">
+                <span className="text-[22px] sm:text-[24px] md:text-[28px] lg:text-[38px] line-through font-semibold text-[#FD5A5A]">
                   {currentCourse.fixed_price}
                 </span>
                 <span className="text-[20px] md:text-[35px]">/</span>
-                <span className="text-[28px] md:text-[38px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
+                <span className="text-[22px] sm:text-[24px] md:text-[28px] lg:text-[38px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
                   {currentCourse.price}
                 </span>
                 <span className="text-[#4C4C4D] text-[14px] md:text-[18px] font-medium">
@@ -273,7 +275,7 @@ const CourseTypes = () => {
                     <div className="mt-0.5 bg-[#DCF4FF] p-1 rounded-[4px]">
                       <Check className="w-4 h-4 md:w-5 md:h-5 text-[#4C4C4D]" />
                     </div>
-                    <span className="text-[#4C4C4D] text-[14px] md:text-[18px] font-[400]">
+                    <span className="text-[#4C4C4D] text-[12px] md:text-[18px] font-[400]">
                       {feature}
                     </span>
                   </div>
