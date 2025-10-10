@@ -19,7 +19,7 @@ const Information = () => {
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
       </p>
-      <p className="sm:sm:text-[28px] text-[14px] text-[14px] font-[500]">
+      <p className="sm:sm:text-[28px] text-[14px] font-[500]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea

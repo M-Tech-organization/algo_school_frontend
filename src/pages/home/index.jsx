@@ -12,6 +12,7 @@ import Discount from "../../components/discount";
 import Course from "../../components/course";
 import Explain from "../../components/explain";
 import FloatingMenu from "../../components/floating";
+import Videos from "../../components/videos";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <Information />
       <Data />
       <Gallery />
+      <Videos/>
       <Explain />
       <Course />
       <Discount />

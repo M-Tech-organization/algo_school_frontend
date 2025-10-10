@@ -75,7 +75,7 @@ const Navbar = () => {
             {/* X tugmasi */}
             <button
               onClick={() => setShowTop(false)}
-              className="flex-shrink-0 ml-3"
+              className="cursor-pointer flex-shrink-0 ml-3"
               aria-label="Close"
             >
               <X className="text-white w-5 h-5" />
