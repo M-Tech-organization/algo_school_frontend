@@ -7,7 +7,7 @@ const Guarantee = () => {
         src={quality}
         alt="Image"
         className="w-full max-w-[160px] xs:max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[378px] h-auto mx-auto"/>
-      <h3 className="uppercase text-[#262626] text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] font-semibold">
+      <h3 className="uppercase leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] text-[#262626] text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] font-semibold">
         <span className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
           “Ko'zlarimga ishonmayman”
         </span>{" "}

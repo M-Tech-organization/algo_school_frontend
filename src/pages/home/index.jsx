@@ -11,6 +11,7 @@ import Gallery from "../../components/gallery";
 import Discount from "../../components/discount";
 import Course from "../../components/course";
 import Explain from "../../components/explain";
+import FloatingMenu from "../../components/floating";
 
 const Home = () => {
   return (
@@ -18,16 +19,17 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Result />
-      <Instruction/>
-      <Information/>
-      <Data/>
-      <Gallery/>
-      <Explain/>
-      <Course/>
-      <Discount/>
+      <Instruction />
+      <Information />
+      <Data />
+      <Gallery />
+      <Explain />
+      <Course />
+      <Discount />
       <Guarantee />
       <Faq />
       <Footer />
+      <FloatingMenu />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const Discount = () => {
 
   // Chegirma tugash sanasi (5 kun)
   const discountEndDate = new Date();
-  discountEndDate.setDate(discountEndDate.getDate() + 5);
+  discountEndDate.setDate(discountEndDate.getDate() + 2);
 
   useEffect(() => {
     const interval = setInterval(() => {

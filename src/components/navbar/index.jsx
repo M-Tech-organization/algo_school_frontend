@@ -137,7 +137,7 @@ const Navbar = () => {
                   behavior: "smooth",
                 });
               }}
-              className="relative w-full sm:w-auto min-w-[280px] sm:min-w-[400px] h-16 sm:h-24 rounded-xl text-white font-bold text-xl sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group"
+              className="cursor-pointer relative w-full sm:w-auto min-w-[280px] sm:min-w-[400px] h-16 sm:h-24 rounded-xl text-white font-bold text-xl sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group"
             >
               <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-0.5">
                 <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 group-hover:bg-white">

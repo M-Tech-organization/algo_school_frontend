@@ -216,27 +216,17 @@ const CourseTypes = () => {
 
         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
           {/* Tabs */}
-          <div
-            className="
-  flex bg-[#D9ECFF] gap-2 p-2 rounded-2xl mb-[40px] md:mb-[60px] 
-  justify-between 
-  max-[375px]:overflow-x-auto 
-  max-[375px]:flex-nowrap 
-  max-[375px]:scrollbar-hide 
-  flex-nowrap
-"
-          >
+          <div className="flex bg-[#D9ECFF] gap-2 p-2 rounded-2xl mb-[40px] md:mb-[60px] justify-between max-[375px]:overflow-x-auto max-[375px]:flex-nowrap max-[375px]:scrollbar-hide flex-nowrap">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-shrink-0 px-3 md:px-[70px] py-2 md:py-[16px] 
-      rounded-[12px] font-semibold text-[12px] md:text-[18px] 
-      transition-all ${
-        activeTab === tab.id
-          ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md"
-          : "text-gray-600 hover:text-gray-800 bg-[#D9ECFF]"
-      }`}
+                className={`cursor-pointer flex-shrink-0 px-3 md:px-[70px] py-2 md:py-[16px] rounded-[12px] font-semibold text-[12px] md:text-[18px] transition-all 
+                  ${
+                    activeTab === tab.id
+                      ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md"
+                      : "text-gray-600 hover:text-gray-800 bg-[#D9ECFF]"
+                  }`}
               >
                 {tab.label}
               </button>
@@ -253,7 +243,7 @@ const CourseTypes = () => {
 
             {/* Content block */}
             <div className="mx-auto">
-              <h3 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold text-[#262626] mb-4">
+              <h3 className="text-[20px] text-l sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold text-[#262626] mb-4">
                 {currentCourse.title}
               </h3>
               <div className="flex flex-wrap items-baseline gap-2 mb-6">

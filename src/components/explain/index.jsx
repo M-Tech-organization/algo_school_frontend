@@ -178,10 +178,10 @@ const Explain = () => {
                 behavior: "smooth",
               });
             }}
-            className="relative cursor-pointer my-8 w-full max-w-[320px] xs:max-w-[400px] sm:max-w-[500px] h-[50px] xs:h-[70px] sm:h-[100px] rounded-[12px] text-white font-bold text-[14px] xs:text-[20px] sm:text-[38px] overflow-hidden transition-all duration-300 hover:text-[#262626]"
+            className="relative cursor-pointer my-8 w-full max-w-[320px] xs:max-w-[400px] sm:max-w-[500px] h-[50px] xs:h-[70px] sm:h-[100px] rounded-[12px] font-bold text-[14px] xs:text-[20px] sm:text-[38px] overflow-hidden transition-all duration-300"
           >
             <span className="absolute inset-0 rounded-[12px] bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-[2px]">
-              <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 hover:bg-white">
+              <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 hover:bg-white text-white hover:text-[#262626]">
                 Register Now
               </span>
             </span>
