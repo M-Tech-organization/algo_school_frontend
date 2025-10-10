@@ -252,7 +252,7 @@ const CourseTypes = () => {
             </div>
 
             {/* Content block */}
-            <div>
+            <div className="mx-auto">
               <h3 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold text-[#262626] mb-4">
                 {currentCourse.title}
               </h3>
