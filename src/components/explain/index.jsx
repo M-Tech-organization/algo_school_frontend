@@ -17,11 +17,13 @@ const Explain = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 13 ni flash bo‘yicha selectedga qo‘shish yoki olib tashlash
+  // 13 ni flash bo‘yicha boshqarish + 14 ni doimiy saqlab qolish
   useEffect(() => {
     setSelected((prev) => {
-      const others = prev.filter((n) => n !== 13);
-      return flash ? [...others, 13] : others;
+      // 14 doim bo'lishi kerak
+      const base = prev.includes(14) ? prev : [...prev, 14];
+      const without13 = base.filter((n) => n !== 13);
+      return flash ? [...without13, 13] : without13;
     });
   }, [flash]);
 
@@ -31,25 +33,19 @@ const Explain = () => {
     if (num === 13 || num === 14) return;
 
     if (selected.includes(num)) {
-      // agar allaqachon bosilgan bo‘lsa — o‘chirib tashlaymiz
       setSelected(selected.filter((n) => n !== num));
     } else {
-      // agar hali tanlanmagan bo‘lsa
-      if (selected.length < 3) {
-        // 13 va 14 allaqachon ichida bo'lishi mumkinligi uchun 3 deb qo‘ydik
-        setSelected([...selected, num]);
+      // 13 va 14 alohida hisobga olinadi
+      const userSelected = selected.filter((n) => n !== 13 && n !== 14);
+
+      if (userSelected.length >= 2) {
+        // faqat user tanlagan birinchisini olib tashlab yangisini qo‘shamiz
+        const newSelected = selected.filter(
+          (n) => n !== userSelected[0] && n !== 13 && n !== 14
+        );
+        setSelected([...newSelected, 13, 14, num]);
       } else {
-        // agar 2 ta tanlovdan oshsa — faqat user tanlaganlarini boshqaramiz
-        const userSelected = selected.filter((n) => n !== 13 && n !== 14);
-        if (userSelected.length >= 2) {
-          // faqat user tanlagan birinchisini olib tashlab yangisini qo‘shamiz
-          const newSelected = selected.filter(
-            (n) => n !== userSelected[0] && n !== 13 && n !== 14
-          );
-          setSelected([...newSelected, 13, 14, num]);
-        } else {
-          setSelected([...selected, num]);
-        }
+        setSelected([...selected, num]);
       }
     }
   };
@@ -135,12 +131,14 @@ const Explain = () => {
                   className="flex-shrink-0 w-[18px] xs:w-[22px] sm:w-[28px] md:w-[36px]"
                 >
                   <input
-                    id={id}
+                    id={`checkbox-${num}`}
                     type="checkbox"
                     checked={selected.includes(num)}
                     onChange={() => handleSelect(num)}
+                    disabled={num === 13 || num === 14 ? true : false} // 13 va 14 bosilmaydi
                     className="sr-only peer"
                   />
+
                   <label
                     aria-label={`Box ${id}`}
                     htmlFor={id}

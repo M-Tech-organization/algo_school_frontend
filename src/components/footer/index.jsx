@@ -11,7 +11,7 @@ const Footer = () => {
           <img
             src={footer_logo}
             alt="Logo"
-            className="mb-4 md:mb-6 max-w-[154px] w-full h-auto"
+            className="mb-4 md:mb-6 max-w-[150px] w-full h-auto"
           />
           <p className="text-[14px] sm:text-[16px] leading-relaxed">
             Veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex

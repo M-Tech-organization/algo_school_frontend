@@ -10,43 +10,41 @@ body {
   }
 }
 
-/* scroll barni yashirish */
+/* ======== SCROLL YASHIRISH (Kerakli joyda class bilan) ======== */
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE va Edge */
-  scrollbar-width: none; /* Firefox */
+  display: none; /* Chrome, Safari, Edge */
 }
 
-/* ======== CHIROYLI SCROLLBAR (Desktop) ======== */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE va eski Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+/* ======== CHIROYLI SCROLLBAR (Umumiy — agar yashirish class ishlatilmasa) ======== */
 
 /* WebKit — Chrome, Safari, Edge uchun */
 ::-webkit-scrollbar {
-  width: 10px; /* Scroll kengligi */
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f0f3ff; /* Scroll orqa foni */
+  background: #f0f3ff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1fb3f5, #6651ff); /* Gradient rang */
-  border-radius: 12px; /* Burchaklarni yumaloqlash */
+  background: linear-gradient(180deg, #1fb3f5, #6651ff);
+  border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    #32c4ff,
-    #7b6fff
-  ); /* Hover bo‘lganda rang */
+  background: linear-gradient(180deg, #32c4ff, #7b6fff);
 }
 
 /* Firefox uchun */
 html {
-  scrollbar-width: thin; /* thin yoki auto */
-  scrollbar-color: #6651ff #f0f3ff; /* thumb va track rangi */
+  scrollbar-width: thin;
+  scrollbar-color: #6651ff #f0f3ff;
 }
 
 .ImageSlider {

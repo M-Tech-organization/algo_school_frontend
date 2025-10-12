@@ -41,7 +41,7 @@ const Videos = () => {
   };
 
   return (
-    <div className="ImageSlider max-w-[1000px] mx-auto">
+    <div className="ImageSlider max-w-[1000px] mx-auto -my-[50px] md:my-[50px]">
       <h3 className="text-center text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
         Videos
       </h3>

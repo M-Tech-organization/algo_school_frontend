@@ -2,50 +2,35 @@ import { useEffect, useState } from "react";
 import { ArrowRight, X } from "lucide-react";
 import hero1 from "../../assets/hero1.png";
 import line from "../../assets/line.png";
-import logo2 from "../../assets/logo2.svg";
+import logo2 from "../../assets/logo2.png";
 import top from "../../assets/top.png";
 import bottom from "../../assets/bottom.png";
 
 const Navbar = () => {
   const [showTop, setShowTop] = useState(true);
   const boxes = Array.from({ length: 14 }, (_, i) => i + 1);
-  const [selected, setSelected] = useState([14]); // 14 doim active
-  const [flash, setFlash] = useState(true); // 13 uchun toggle
+  const [selected, setSelected] = useState([14]); // 14 doim aktiv
+  const [flash, setFlash] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setFlash((prev) => !prev);
-    }, 1000); // 1s interval
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    // 13 checkboxining opacity-ni boshqarish
-    setSelected((prev) => {
-      const others = prev.filter((n) => n !== 13);
-      return flash ? [...others, 13] : others;
-    });
-  }, [flash]);
-
-  // flash bo'yicha 13 ni selectedga qo'shish yoki chiqarish
+  // 13 ni flash bo'yicha boshqarish + 14ni saqlab qolish
   useEffect(() => {
     setSelected((prev) => {
-      const others = prev.filter((n) => n !== 13);
-      return flash ? [...others, 13] : others;
+      const base = prev.includes(14) ? prev : [...prev, 14];
+      const without13 = base.filter((n) => n !== 13);
+      return flash ? [...without13, 13] : without13;
     });
   }, [flash]);
 
   const handleSelect = (num) => {
-    if (num === 13 || num === 14) return; // 13 va 14 ni manual o'zgartirish mumkin emas
-    if (selected.includes(num)) {
-      setSelected(selected.filter((n) => n !== num));
-    } else {
-      if (selected.length < 2) {
-        setSelected([...selected, num]);
-      } else {
-        setSelected([selected[1], num]);
-      }
-    }
+    // Faqat 13 va 14 ishlaydi
+    if (num !== 13 && num !== 14) return;
   };
 
   return (
@@ -55,7 +40,7 @@ const Navbar = () => {
           <div className="bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] rounded-[8px] mt-4 py-3 px-4 flex items-center justify-center gap-3 absolute top-0 left-0 w-full z-50">
             {/* Matn va ArrowRight */}
             <div className="flex items-center justify-center gap-3 flex-1">
-              <h1 className="text-white font-normal text-xs sm:text-sm md:text-base text-center">
+              <h1 className="text-white font-normal text-[9px] sm:text-xs md:text-sm lg:text-base xl:text-lg text-center">
                 IT Courses 🌟 Sale Ends Soon, Get It Now
               </h1>
 

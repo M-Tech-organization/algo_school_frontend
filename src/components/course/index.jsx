@@ -1,3 +1,4 @@
+import content_register from "../../assets/content_register.jpg";
 import { useState } from "react";
 import { Check, X, Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -102,62 +103,64 @@ const CourseTypes = () => {
     return phone;
   };
 
-  // Form validation
   const validateForm = () => {
     if (!formData.full_name.trim()) {
       setError("Iltimos, to'liq ismingizni kiriting");
       return false;
     }
     if (!formData.phone.trim()) {
-      setError("Iltimos, telefon raqamingizni kiriting");
+      setError("Telefon raqamingizni kiriting");
       return false;
     }
-    // Telefon raqam uzunligini tekshirish
     const cleanPhone = formData.phone.replace(/\D/g, "");
     if (cleanPhone.length < 9) {
       setError("Telefon raqam noto'g'ri formatda");
       return false;
     }
+    setError("");
     return true;
   };
 
   const handleRegister = async () => {
-    // form validatsiya
     if (!validateForm()) {
       toast.error("Iltimos, barcha maydonlarni to'g'ri to'ldiring");
       return;
     }
 
     setLoading(true);
-    setError("");
+
+    const userData = {
+      full_name: formData.full_name,
+      phone: formatPhoneNumber(formData.phone),
+      course_type: activeTab.charAt(0).toUpperCase() + activeTab.slice(1),
+    };
 
     try {
-      const response = await api.post("/register/", {
-        full_name: formData.full_name,
-        phone: formatPhoneNumber(formData.phone),
-        course_type: activeTab.charAt(0).toUpperCase() + activeTab.slice(1),
-      });
+      // Promise.race - birinchi tugagan ishni olish
+      await Promise.race([
+        api.post("/register/", userData),
+        new Promise((resolve) => setTimeout(resolve, 1000)), // Max 500ms kutish
+      ]);
 
-      console.log("Registration success:", response.data);
-      toast.success("Muvaffaqiyatli ro'yxatdan o'tdingiz!");
-      setSuccess(true);
-
-      // 1.5 sekunddan keyin payment sahifasiga o'tish
-      setTimeout(() => {
-        navigate("/payment", { state: { userData: response.data } });
-      }, 1000);
+      // Darhol o'tish
+      handleCloseModal();
+      navigate("/payment", { state: { userData } });
     } catch (err) {
-      console.error("Registration error:", err);
-      const errorMessage =
-        err.response?.data?.message ||
-        "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring";
-      setError(errorMessage);
-      toast.error(errorMessage);
+      // Agar 500ms dan keyin ham javob kelmasa, baribir o'tkazish
+      if (!err.response) {
+        handleCloseModal();
+        navigate("/payment", { state: { userData } });
+
+        // Background'da davom etish
+        api.post("/register/", userData).catch(console.error);
+      } else {
+        console.error("Registration error:", err);
+        toast.error(err.response?.data?.message || "Xatolik yuz berdi");
+      }
     } finally {
       setLoading(false);
     }
   };
-
   // Modalni ochish
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -216,37 +219,44 @@ const CourseTypes = () => {
 
         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
           {/* Tabs */}
-          <div className="flex bg-[#D9ECFF] gap-2 p-2 rounded-2xl mb-[40px] md:mb-[60px] justify-between max-[375px]:overflow-x-auto max-[375px]:flex-nowrap max-[375px]:scrollbar-hide flex-nowrap">
+          <div className="flex bg-[#D9ECFF] gap-2 p-2 rounded-2xl mb-[40px] md:mb-[60px] justify-between overflow-x-auto flex-nowrap scrollbar-hide">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`cursor-pointer flex-shrink-0 px-3 md:px-[70px] py-2 md:py-[16px] rounded-[12px] font-semibold text-[12px] md:text-[18px] transition-all 
-                  ${
-                    activeTab === tab.id
-                      ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md"
-                      : "text-gray-600 hover:text-gray-800 bg-[#D9ECFF]"
-                  }`}
+        ${
+          activeTab === tab.id
+            ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md"
+            : "text-gray-600 hover:text-gray-800 bg-[#D9ECFF]"
+        }`}
               >
                 {tab.label}
               </button>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-40 items-center">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-center justify-center px-4 md:px-8">
             {/* Image block */}
-            <div className="bg-gray-200 rounded-2xl  max-w-[300px] xs:max-w-[340px] sm:max-w-[380px]  w-full  h-48 xs:h-56 sm:h-64 md:h-[410px]  flex items-center justify-center  mx-auto md:mx-0  order-first md:order-last">
-              <div className="text-gray-400 text-4xl xs:text-5xl sm:text-6xl md:text-7xl">
-                📚
-              </div>
+            <div className="flex items-center justify-center mx-auto md:mx-0 order-first md:order-last">
+              <img
+                src={content_register}
+                alt="Image"
+                className="rounded-2xl max-w-[300px] xs:max-w-[340px] sm:max-w-[490px] w-full h-48 xs:h-56 sm:h-64 md:h-[410px] object-cover"
+              />
             </div>
 
             {/* Content block */}
-            <div className="mx-auto">
-              <h3 className="text-[20px] text-l sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold text-[#262626] mb-4">
-                {currentCourse.title}
-              </h3>
-              <div className="flex flex-wrap items-baseline gap-2 mb-6">
+            <div className="w-full max-w-[500px] text-left mx-auto">
+              {/* Title */}
+              <div className="mb-4">
+                <h3 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold text-[#262626]">
+                  {currentCourse.title}
+                </h3>
+              </div>
+
+              {/* Price */}
+              <div className="h-[50px] md:h-[80px] flex flex-wrap items-baseline gap-2">
                 <span className="text-[22px] sm:text-[24px] md:text-[28px] lg:text-[38px] line-through font-semibold text-[#FD5A5A]">
                   {currentCourse.fixed_price}
                 </span>
@@ -259,10 +269,11 @@ const CourseTypes = () => {
                 </span>
               </div>
 
-              <div className="space-y-2 md:space-y-3 mb-6 md:mb-8">
+              {/* Features */}
+              <div className="h-[180px] md:h-[250px] mb-6 md:mb-8 overflow-y-auto space-y-2 md:space-y-3">
                 {currentCourse.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-2 md:gap-3">
-                    <div className="mt-0.5 bg-[#DCF4FF] p-1 rounded-[4px]">
+                    <div className="mt-0.5 bg-[#DCF4FF] p-1 rounded-[4px] flex-shrink-0">
                       <Check className="w-4 h-4 md:w-5 md:h-5 text-[#4C4C4D]" />
                     </div>
                     <span className="text-[#4C4C4D] text-[12px] md:text-[18px] font-[400]">
@@ -272,16 +283,19 @@ const CourseTypes = () => {
                 ))}
               </div>
 
-              <button
-                onClick={handleOpenModal}
-                className="relative cursor-pointer my-4 md:my-[40px] w-full max-w-[386px] h-[50px] md:h-[60px] rounded-[10px] text-white font-semibold text-[16px] md:text-[18px] overflow-hidden transition-all duration-300 group"
-              >
-                <span className="absolute inset-0 rounded-[10px] bg-gradient-to-r from-blue-500 to-purple-600 p-[2px]">
-                  <span className="w-full h-full bg-transparent rounded-[8px] flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-[#262626]">
-                    GET STARTED
+              {/* Button */}
+              <div className="mt-auto flex justify-center md:justify-start">
+                <button
+                  onClick={handleOpenModal}
+                  className="relative cursor-pointer w-full max-w-[386px] h-[50px] md:h-[60px] rounded-[10px] text-white font-semibold text-[16px] md:text-[18px] overflow-hidden transition-all duration-300 group"
+                >
+                  <span className="absolute inset-0 rounded-[10px] bg-gradient-to-r from-blue-500 to-purple-600 p-[2px]">
+                    <span className="w-full h-full bg-transparent rounded-[8px] flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-[#262626]">
+                      GET STARTED
+                    </span>
                   </span>
-                </span>
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -314,6 +328,7 @@ const CourseTypes = () => {
                 Fill in your details
               </h3>
 
+              {/* Full Name */}
               <div className="flex flex-col">
                 <label
                   htmlFor="fullName"
@@ -328,11 +343,19 @@ const CourseTypes = () => {
                   value={formData.full_name}
                   onChange={handleInputChange}
                   placeholder="Enter your full name"
-                  className="w-full p-3 border border-[#F1F1F3] rounded-[8px] focus:outline-none focus:border-blue-400"
+                  className={`w-full p-3 border rounded-[8px] focus:outline-none ${
+                    error.includes("ism")
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-[#F1F1F3] focus:border-blue-400"
+                  }`}
                   disabled={loading || success}
                 />
+                {error.includes("ism") && (
+                  <p className="text-red-500 text-sm mt-1">{error}</p>
+                )}
               </div>
 
+              {/* Phone Number */}
               <div className="flex flex-col mt-3">
                 <label
                   htmlFor="phone"
@@ -347,9 +370,16 @@ const CourseTypes = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="+998901234567"
-                  className="w-full p-3 border border-[#F1F1F3] rounded-[8px] focus:outline-none focus:border-blue-400"
+                  className={`w-full p-3 border rounded-[8px] focus:outline-none ${
+                    error.includes("Telefon")
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-[#F1F1F3] focus:border-blue-400"
+                  }`}
                   disabled={loading || success}
                 />
+                {error.includes("Telefon") && (
+                  <p className="text-red-500 text-sm mt-1">{error}</p>
+                )}
               </div>
 
               <button
