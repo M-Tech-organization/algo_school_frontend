@@ -16,10 +16,9 @@ body {
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE va eski Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; /* IE va eski Edge */
+  scrollbar-width: none; /* Firefox */
 }
-
 
 /* ======== CHIROYLI SCROLLBAR (Umumiy — agar yashirish class ishlatilmasa) ======== */
 
@@ -113,10 +112,10 @@ html {
 
 .rightButton,
 .leftButton {
-  padding: 10px;
+  padding: 8px;
   border: none;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,6 +123,24 @@ html {
   color: white;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+}
+
+/* 📲 O‘rta ekranlar (planshet) */
+@media (min-width: 376px) and (max-width: 768px) {
+  .rightButton,
+  .leftButton {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+
+/* 💻 Katta ekranlar (desktop) */
+@media (min-width: 769px) {
+  .rightButton,
+  .leftButton {
+    padding: 10px;
+    font-size: 20px;
+  }
 }
 
 /* Dots */

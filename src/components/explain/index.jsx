@@ -52,7 +52,7 @@ const Explain = () => {
 
   return (
     <div
-      className="w-full min-h-[2600px] relative text-white flex flex-col justify-center px-6 py-[100px]"
+      className="w-full min-h-[1970px] relative text-white flex flex-col justify-center px-6 py-[100px]"
       style={{
         backgroundImage: `url(${explain})`,
         backgroundSize: "cover", // ekranni to'liq egallaydi
