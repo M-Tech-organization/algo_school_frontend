@@ -11,7 +11,8 @@ const videos = [
 ];
 
 const convertToEmbed = (url) => {
-  return url.replace("https://youtu.be/", "https://www.youtube.com/embed/");
+  const videoId = url.split("/").pop().split("?")[0];
+  return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=0`;
 };
 
 const Videos = () => {
@@ -48,35 +49,44 @@ const Videos = () => {
 
       {/* Tugmalar */}
       <div className="buttons mb-[50px] flex justify-end items-center gap-5 w-full mt-[50px] -translate-y-[5px]">
-        <button className="leftButton" onClick={prevVideo}>
+        <button
+          aria-label="leftButton"
+          className="leftButton"
+          onClick={prevVideo}
+        >
           <ArrowLeft size={30} />
         </button>
-        <button className="rightButton" onClick={nextVideo}>
+        <button
+          aria-label="leftButton"
+          className="rightButton"
+          onClick={nextVideo}
+        >
           <ArrowRight size={30} />
         </button>
       </div>
 
       <div className="ImageSliderContainer mb-[20px] flex justify-center items-center gap-4">
-        {/* Chap video */}
         <iframe
+          loading="lazy"
+          title="Previous video preview"
           src={convertToEmbed(videos[leftIndex])}
-          className="leftImage w-[200px] h-[120px]"
+          className="leftImage aspect-video w-[200px] h-[120px]"
           allow="autoplay; encrypted-media"
           allowFullScreen
         />
-
-        {/* O‘rtadagi katta video */}
         <iframe
+          loading="lazy"
+          title="Main video player"
           src={convertToEmbed(videos[midIndex])}
-          className="middleImage w-[600px] h-[340px]"
+          className="middleImage aspect-video w-[600px] h-[340px]"
           allow="autoplay; encrypted-media"
           allowFullScreen
         />
-
-        {/* O‘ng video */}
         <iframe
+          loading="lazy"
+          title="Next video preview"
           src={convertToEmbed(videos[rightIndex])}
-          className="rightImage w-[200px] h-[120px]"
+          className="rightImage aspect-video w-[200px] h-[120px]"
           allow="autoplay; encrypted-media"
           allowFullScreen
         />
@@ -88,7 +98,9 @@ const Videos = () => {
           <div
             key={index}
             className={`w-3 h-3 rounded-full cursor-pointer ${
-              midIndex === index ? "bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]" : "bg-gray-400"
+              midIndex === index
+                ? "bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]"
+                : "bg-gray-400"
             }`}
             onClick={() => setMidIndex(index)}
           ></div>

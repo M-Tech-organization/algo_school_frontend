@@ -9,6 +9,7 @@ const Footer = () => {
         {/* Logo & Text */}
         <div className="max-w-[310px] w-full md:w-auto mb-6 md:mb-0">
           <img
+            loading="lazy"
             src={footer_logo}
             alt="Logo"
             className="mb-4 md:mb-6 max-w-[150px] w-full h-auto"

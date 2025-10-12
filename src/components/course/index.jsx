@@ -240,6 +240,7 @@ const CourseTypes = () => {
             {/* Image block */}
             <div className="flex items-center justify-center mx-auto md:mx-0 order-first md:order-last">
               <img
+                loading="lazy"
                 src={content_register}
                 alt="Image"
                 className="rounded-2xl max-w-[300px] xs:max-w-[340px] sm:max-w-[490px] w-full h-48 xs:h-56 sm:h-64 md:h-[410px] object-cover"
@@ -257,7 +258,7 @@ const CourseTypes = () => {
 
               {/* Price */}
               <div className="h-[50px] md:h-[80px] flex flex-wrap items-baseline gap-2">
-                <span className="text-[22px] sm:text-[24px] md:text-[28px] lg:text-[38px] line-through font-semibold text-[#FD5A5A]">
+                <span className="text-[22px] sm:text-[24px] md:text-[28px] lg:text-[38px] line-through font-semibold text-[#B91C1C]">
                   {currentCourse.fixed_price}
                 </span>
                 <span className="text-[20px] md:text-[35px]">/</span>
@@ -395,6 +396,7 @@ const CourseTypes = () => {
             {/* Right side image */}
             <div className="w-full md:w-1/2 flex items-center justify-center mt-6 md:mt-0 se-hide">
               <img
+                loading="lazy"
                 src="https://tse1.mm.bing.net/th/id/OIP.jleFhbOD3BG8h1PeUIGdNAHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
                 alt="Modal Illustration"
                 className="w-[250px] md:w-[300px] h-[150px] md:h-[330px] object-cover"

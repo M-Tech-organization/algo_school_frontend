@@ -42,6 +42,7 @@ const Instruction = () => {
         {/* Instructor rasm */}
         <div className="flex-shrink-0">
           <img
+            loading="lazy"
             src={instruction}
             alt="Instructor"
             className="rounded-full w-[200px] h-[200px] sm:w-[350px] sm:h-[350px] object-cover border-4 border-white shadow-lg"

@@ -47,11 +47,13 @@ const FloatingMenu = () => {
                   href={hrefs[item]}
                   target={item === "phone" ? "_self" : "_blank"}
                   rel="noopener noreferrer"
+                  aria-label={`Go to ${item}`} // ✅ qo‘shildi
+                  title={`Go to ${item}`} // ✅ SEO uchun ham foydali
                   className={`w-12 h-12 flex items-center justify-center rounded-full text-white shadow-lg transition-all duration-500 
-          ${colors[item]} 
-          ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
-        `}
-                  style={{ transitionDelay: `${index * 100}ms` }} // ikkalik effekt
+    ${colors[item]} 
+    ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+  `}
+                  style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <Icon size={22} />
                 </a>

@@ -9,6 +9,7 @@ const Hero = () => {
         backgroundSize: "100% 100%",
         backgroundPosition: "center",
       }}
+      loading="lazy"
     >
       <h3 className="uppercase lg:text-6xl leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] font-semibold text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] mb-[40px] sm:mb-24 md:mb-32 lg:mb-[80px] text-center max-w-[1000px] mx-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

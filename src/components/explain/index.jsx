@@ -105,6 +105,7 @@ const Explain = () => {
               className="flex items-start gap-2 sm:gap-4 font-[400] text-[12px] xs:text-[14px] sm:text-[24px] lg:text-[28px] capitalize leading-[1.4]"
             >
               <img
+                loading="lazy"
                 src={check}
                 alt="Check icon"
                 className="w-[20px] h-[20px] xs:w-[25px] xs:h-[25px] sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px] flex-shrink-0"
@@ -183,15 +184,20 @@ const Explain = () => {
                 Register Now
               </span>
             </span>
+            {/* Top Image */}
             <img
-              className="absolute top-0 right-[26px]"
+              className="absolute -top-2 right-2 sm:right-[26px] w-[30px] sm:w-[61px] h-[18px] sm:h-[49px] object-contain"
               src={top}
-              alt="Image"
+              alt="Top decorative element"
+              loading="lazy"
             />
+
+            {/* Bottom Image */}
             <img
-              className="absolute bottom-0 left-[16px] "
+              className="absolute -bottom-2 left-2 sm:left-[16px] w-[28px] sm:w-[61px] h-[18px] sm:h-[49px] object-contain"
               src={bottom}
-              alt="Image"
+              alt="Bottom decorative element"
+              loading="lazy"
             />
           </button>
         </div>

@@ -83,7 +83,7 @@ const Data = () => {
               className="cursor-pointer bg-white text-[#1A1A1A] rounded-lg p-6 flex flex-col gap-4 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_10px_30px_rgba(31,179,245,0.4)]"
             >
               <div className="flex items-start gap-4">
-                <img src={check} alt="Check" className="md:w-8 w-[24px] h-auto" />
+                <img src={check} alt="Check" className="md:w-8 w-[24px] h-auto" loading="lazy"/>
                 <h3 className="sm:text-[28px] text-[14px] font-semibold">
                   {item.title}
                 </h3>

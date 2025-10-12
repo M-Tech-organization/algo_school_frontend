@@ -265,12 +265,12 @@ const RegisterBottom = () => {
               {/* F.I.Sh Input */}
               <div className="mt-[30px]">
                 <label className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#4C4C4D] mb-2 block">
-                  F.I.Sh 
+                  F.I.Sh
                 </label>
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="I.F.Sh"
+                    placeholder="F.I.Sh"
                     value={formData.fullName}
                     onChange={(e) => handleFullNameChange(e.target.value)}
                     className={`w-full p-[16px] border rounded-[8px] focus:outline-none text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] text-[#666666] ${
@@ -290,7 +290,7 @@ const RegisterBottom = () => {
               {/* Telefon Raqam Input */}
               <div className="mt-[30px]">
                 <label className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#4C4C4D] mb-2 block">
-                  Telefon Raqam 
+                  Telefon Raqam
                 </label>
                 <input
                   type="tel"
@@ -311,7 +311,7 @@ const RegisterBottom = () => {
               {/* Course Type Custom Dropdown */}
               <div className="mb-[40px]">
                 <label className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#4C4C4D] mb-2 block">
-                  Course Type 
+                  Course Type
                 </label>
                 <div className="relative">
                   <div
@@ -392,6 +392,7 @@ const RegisterBottom = () => {
                     </div>
                     <div className="relative z-10 flex flex-col items-center gap-3.5">
                       <img
+                        loading="lazy"
                         src={card}
                         alt="Card"
                         className="w-full max-w-[50px] sm:max-w-[90px] md:max-w-[100px] lg:max-w-[106px] h-auto"
@@ -410,6 +411,7 @@ const RegisterBottom = () => {
                     <div className="absolute inset-0 rounded-lg border-2 border-gray-200 bg-[#707070]"></div>
                     <div className="relative z-10 flex flex-col items-center gap-3.5">
                       <img
+                        loading="lazy"
                         src={click}
                         alt="Click"
                         className="w-full max-w-[60px] sm:max-w-[100px] md:max-w-[110px] lg:max-w-[126px] h-auto opacity-70"
@@ -438,6 +440,7 @@ const RegisterBottom = () => {
                       <div className="bg-gradient-to-b from-[#D9ECFF] to-[#F0F3FF] w-full p-4 sm:p-6 md:p-8 lg:p-10 rounded-lg flex flex-col gap-6">
                         <div className="flex items-center gap-3">
                           <img
+                            loading="lazy"
                             src={card2}
                             alt="Card"
                             className="w-[36px] h-[36px]"
@@ -476,6 +479,7 @@ const RegisterBottom = () => {
                       <div className="flex gap-3 items-center bg-gradient-to-b from-[#F0F3FF] to-[#D9ECFF] w-full px-4 sm:px-6 md:px-8 lg:px-10 py-8 sm:py-10 md:py-12 lg:py-14 rounded-lg">
                         <label className="flex-1 flex items-center justify-start gap-3 sm:gap-4 md:gap-5 lg:gap-6 cursor-pointer">
                           <img
+                            loading="lazy"
                             src={upload}
                             alt="Upload"
                             className="w-[24px] sm:w-[28px] md:w-[32px] lg:w-[34px] h-[24px] sm:h-[28px] md:h-[32px] lg:h-[34px]"

@@ -68,12 +68,14 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      
       {/* Hero Section */}
       <div className="w-full px-4 sm:px-6 lg:px-8 pt-[150px] sm:pt-[150px] pb-[92px]">
         <div className="max-w-5xl mx-auto">
           {/* Line decoration */}
           <div className="relative">
             <img
+              loading="lazy"
               src={line}
               alt="Line"
               className="absolute -top-[20px] xs:-top-[25px] left-2 xs:left-4 sm:left-8 md:left-28 w-5 xs:w-6 sm:w-8 z-0 pointer-events-none"
@@ -85,10 +87,12 @@ const Navbar = () => {
             {/* Logo + Unlock Your */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
               <img
+                loading="lazy"
                 src={logo2}
                 alt="Logo"
-                className="w-8 h-8 sm:w-[70px] sm:h-[70px] flex-shrink-0"
+                className="w-8 h-8 sm:w-[70px] sm:h-[70px] flex-shrink-0 object-contain"
               />
+
               <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
                 Unlock
               </span>
@@ -105,7 +109,12 @@ const Navbar = () => {
 
           {/* Hero Image */}
           <div className="mb-8 sm:mb-12">
-            <img src={hero1} alt="Hero" className="w-full h-auto rounded-lg" />
+            <img
+              src={hero1}
+              alt="Hero"
+              className="w-full h-auto rounded-lg "
+              loading="lazy"
+            />
           </div>
 
           {/* Description */}
@@ -129,15 +138,20 @@ const Navbar = () => {
                   Register Now
                 </span>
               </span>
+              {/* Top Image */}
               <img
-                className="absolute top-0 right-[26px]"
+                className="absolute -top-2 right-2 sm:right-[26px] w-[30px] sm:w-[61px] h-[18px] sm:h-[49px] object-contain"
                 src={top}
-                alt="Image"
+                alt="Top decorative element"
+                loading="lazy"
               />
+
+              {/* Bottom Image */}
               <img
-                className="absolute bottom-0 left-[16px] "
+                className="absolute -bottom-2 left-2 sm:left-[16px] w-[28px] sm:w-[61px] h-[18px] sm:h-[49px] object-contain"
                 src={bottom}
-                alt="Image"
+                alt="Bottom decorative element"
+                loading="lazy"
               />
             </button>
           </div>

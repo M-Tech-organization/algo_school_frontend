@@ -11,6 +11,7 @@ const Result = () => {
       <div className="relative w-full max-w-[1000px] mx-auto">
         {/* Pastdagi rasm */}
         <img
+          loading="lazy"
           src={result}
           alt="Result Background"
           className="w-full h-auto object-contain"
@@ -18,6 +19,7 @@ const Result = () => {
 
         {/* Ustidagi rasm */}
         <img
+          loading="lazy"
           src={results}
           alt="Result Overlay"
           className="absolute rounded-[12px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] md:w-[800px] h-auto object-contain z-10"

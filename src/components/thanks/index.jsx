@@ -1,6 +1,6 @@
 import thanks from "../../assets/thanks.png";
 import thanks2 from "../../assets/thanks2.png";
-import logo from "../../assets/logo.svg";
+import thanks_logo from "../../assets/thanks_logo.png";
 import { useNavigate } from "react-router-dom";
 
 const Thanks = () => {
@@ -21,7 +21,12 @@ const Thanks = () => {
       {/* Container */}
       <div className="max-w-[1078px] w-full bg-white rounded-2xl shadow-lg p-6 sm:p-10 flex flex-col items-center gap-[30px] text-center">
         {/* Logo */}
-        <img src={logo} alt="Logo" className="w-40 sm:w-[207px] h-auto" />
+        <img
+          src={thanks_logo}
+          alt="Logo"
+          className="w-40 sm:w-[207px] h-auto"
+          loading="lazy"
+        />
         {/* Title */}
         <h1 className="text-2xl md:text-[38px] font-semibold">
           <span className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
@@ -36,6 +41,7 @@ const Thanks = () => {
         </p>
         {/* Illustration */}
         <img
+          loading="lazy"
           src={thanks2}
           alt="Thank You Illustration"
           className="max-w-[350px] w-full h-auto"
