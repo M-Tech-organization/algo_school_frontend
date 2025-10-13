@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, X } from "lucide-react";
-import hero1 from "../../assets/hero1.png";
+import hero1 from "../../assets/hero1.webp";
 import line from "../../assets/line.png";
-import logo2 from "../../assets/logo2.png";
 import top from "../../assets/top.png";
 import bottom from "../../assets/bottom.png";
 
 const Navbar = () => {
   const [showTop, setShowTop] = useState(true);
   const boxes = Array.from({ length: 14 }, (_, i) => i + 1);
-  const [selected, setSelected] = useState([14]); // 14 doim aktiv
+  const [selected, setSelected] = useState([9, 10, 11, 12, 13, 14]); // 14 doim aktiv
   const [flash, setFlash] = useState(true);
 
   useEffect(() => {
@@ -23,14 +22,14 @@ const Navbar = () => {
   useEffect(() => {
     setSelected((prev) => {
       const base = prev.includes(14) ? prev : [...prev, 14];
-      const without13 = base.filter((n) => n !== 13);
-      return flash ? [...without13, 13] : without13;
+      const without13 = base.filter((n) => n !== 8);
+      return flash ? [...without13, 8] : without13;
     });
   }, [flash]);
 
   const handleSelect = (num) => {
     // Faqat 13 va 14 ishlaydi
-    if (num !== 13 && num !== 14) return;
+    if (num !== 8 && num !== 14) return;
   };
 
   return (
@@ -41,7 +40,8 @@ const Navbar = () => {
             {/* Matn va ArrowRight */}
             <div className="flex items-center justify-center gap-3 flex-1">
               <h1 className="text-white font-normal text-[9px] sm:text-xs md:text-sm lg:text-base xl:text-lg text-center">
-                IT Courses 🌟 Sale Ends Soon, Get It Now
+                “Kod yozishni o‘rganmoqchimisiz — lekin qayerdan boshlashni
+                bilmaysizmi?”{" "}
               </h1>
 
               <button
@@ -68,7 +68,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      
+
       {/* Hero Section */}
       <div className="w-full px-4 sm:px-6 lg:px-8 pt-[150px] sm:pt-[150px] pb-[92px]">
         <div className="max-w-5xl mx-auto">
@@ -78,32 +78,25 @@ const Navbar = () => {
               loading="lazy"
               src={line}
               alt="Line"
-              className="absolute -top-[20px] xs:-top-[25px] left-2 xs:left-4 sm:left-8 md:left-28 w-5 xs:w-6 sm:w-8 z-0 pointer-events-none"
+              className="absolute -top-[20px] xs:-top-[25px] left-2 xs:left-4 sm:left-8 md:left-20 w-5 xs:w-6 sm:w-8 z-0 pointer-events-none"
             />
           </div>
 
           {/* Title Card */}
-          <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:p-6 mb-8 sm:mb-[80px] z-10 w-[220px] xs:w-[260px] max-w-[713px] sm:w-full mx-auto">
+          <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:p-6 mb-8 sm:mb-[80px] z-10 max-w-[1000px] w-full mx-auto">
             {/* Logo + Unlock Your */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
-              <img
-                loading="lazy"
-                src={logo2}
-                alt="Logo"
-                className="w-8 h-8 sm:w-[70px] sm:h-[70px] flex-shrink-0 object-contain"
-              />
-
               <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
-                Unlock
+                Algo School
               </span>
               <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 flex-shrink-0">
-                Your
+                sizni chalkash
               </span>
             </div>
 
             {/* Potential Value */}
             <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 text-center mt-4 sm:mt-6">
-              Potential Value
+              nazariyadan olib chiqib, <br /> 90 kunda haqiqiy dasturchiga aylantiradi.
             </h2>
           </div>
 
@@ -119,8 +112,8 @@ const Navbar = () => {
 
           {/* Description */}
           <p className="text-base sm:text-xl lg:text-[24px] font-[400] text-[#4C4C4D] text-center mb-6 sm:mb-10">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor.
+            Har bir kod orqasida g'alaba yashiringan. <br /> Biz o'qitamiz —
+            ular dunyoni zabt etadi.
           </p>
 
           {/* Register Button */}
@@ -134,8 +127,8 @@ const Navbar = () => {
               className="cursor-pointer relative w-full sm:w-auto min-w-[280px] sm:min-w-[400px] h-16 sm:h-24 rounded-xl text-white font-bold text-xl sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group"
             >
               <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-0.5">
-                <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 group-hover:bg-white">
-                  Register Now
+                <span className="uppercase w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 group-hover:bg-white">
+                  Hoziroq Boshlash
                 </span>
               </span>
               {/* Top Image */}
@@ -181,10 +174,10 @@ const Navbar = () => {
         ? "from-[#1FB3F5] to-[#6651FF]"
         : "from-[#F0F3FF] to-[#D9ECFF]"
     }
-    ${num === 13 ? "transition-opacity duration-500" : ""}
+    ${num === 8 ? "transition-opacity duration-500" : ""}
   `}
                   style={{
-                    opacity: num === 13 ? (selected.includes(13) ? 1 : 0) : 1,
+                    opacity: num === 8 ? (selected.includes(8) ? 1 : 0) : 1,
                   }}
                 >
                   <svg

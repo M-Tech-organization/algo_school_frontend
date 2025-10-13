@@ -21,29 +21,29 @@ const Explain = () => {
   useEffect(() => {
     setSelected((prev) => {
       // 14 doim bo'lishi kerak
-      const base = prev.includes(14) ? prev : [...prev, 14];
-      const without13 = base.filter((n) => n !== 13);
-      return flash ? [...without13, 13] : without13;
+      const base = prev.includes(9, 10, 11, 12, 13, 14) ? prev : [...prev, 9, 10, 11, 12, 13, 14];
+      const without13 = base.filter((n) => n !== 8);
+      return flash ? [...without13, 8] : without13;
     });
   }, [flash]);
 
   // 📌 Checkbox tanlash funksiyasi
   const handleSelect = (num) => {
     // 13 va 14 ni bosib bo‘lmaydi
-    if (num === 13 || num === 14) return;
+    if (num === 8 || num === 14) return;
 
     if (selected.includes(num)) {
       setSelected(selected.filter((n) => n !== num));
     } else {
       // 13 va 14 alohida hisobga olinadi
-      const userSelected = selected.filter((n) => n !== 13 && n !== 14);
+      const userSelected = selected.filter((n) => n !== 8 && n !== 9, 10, 11, 12, 13, 14);
 
       if (userSelected.length >= 2) {
         // faqat user tanlagan birinchisini olib tashlab yangisini qo‘shamiz
         const newSelected = selected.filter(
-          (n) => n !== userSelected[0] && n !== 13 && n !== 14
+          (n) => n !== userSelected[0] && n !== 8 && n !== 9, 10, 11, 12, 13, 14
         );
-        setSelected([...newSelected, 13, 14, num]);
+        setSelected([...newSelected, 8, 9, 10, 11, 12, 13, 14, num]);
       } else {
         setSelected([...selected, num]);
       }
@@ -136,7 +136,7 @@ const Explain = () => {
                     type="checkbox"
                     checked={selected.includes(num)}
                     onChange={() => handleSelect(num)}
-                    disabled={num === 13 || num === 14 ? true : false} // 13 va 14 bosilmaydi
+                    disabled={num === 8 || num === 14 ? true : false} // 13 va 14 bosilmaydi
                     className="sr-only peer"
                   />
 
@@ -180,8 +180,8 @@ const Explain = () => {
             className="relative cursor-pointer my-8 w-full max-w-[320px] xs:max-w-[400px] sm:max-w-[500px] h-[50px] xs:h-[70px] sm:h-[100px] rounded-[12px] font-bold text-[14px] xs:text-[20px] sm:text-[38px] overflow-hidden transition-all duration-300"
           >
             <span className="absolute inset-0 rounded-[12px] bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-[2px]">
-              <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 hover:bg-white text-white hover:text-[#262626]">
-                Register Now
+              <span className="uppercase w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 hover:bg-white text-white hover:text-[#262626]">
+                Hoziroq boshlash
               </span>
             </span>
             {/* Top Image */}

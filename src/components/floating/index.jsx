@@ -1,11 +1,6 @@
 import { useState } from "react";
-import {
-  FaTelegramPlane,
-  FaInstagram,
-  FaFacebookF,
-  FaPhoneAlt,
-} from "react-icons/fa";
-import { IoMdChatboxes } from "react-icons/io";
+import { FaTelegramPlane, FaInstagram, FaPhoneAlt } from "react-icons/fa";
+import { IoLogoYoutube, IoMdChatboxes } from "react-icons/io";
 import { Headset, X } from "lucide-react";
 
 const FloatingMenu = () => {
@@ -16,25 +11,26 @@ const FloatingMenu = () => {
       <div className="flex flex-col items-center z-50">
         {/* Social / Chat Icons */}
         <div className="flex flex-col items-center gap-3 mb-4">
-          {["telegram", "facebook", "instagram", "phone", "chat"].map(
+          {["telegram", "youtube", "instagram", "phone", "chat"].map(
             (item, index) => {
               const hrefs = {
-                telegram: "https://t.me/yourtelegram",
-                facebook: "https://facebook.com/yourfacebook",
-                instagram: "https://instagram.com/yourinstagram",
-                phone: "tel:+998901234567",
-                chat: "https://t.me/yourtelegramchat",
+                youtube: "https://www.youtube.com/@AlgoSchool",
+                telegram: "@AlgoSchoolHelp",
+                instagram:
+                  "https://www.instagram.com/algoschool.uz?igsh=MW50Y3ZocGN0MmZ1Mg==",
+                phone: "tel:+998908086383",
+                chat: "#faq",
               };
               const colors = {
+                youtube: "bg-[#B91C1C] hover:bg-[#E02424]",
                 telegram: "bg-blue-500 hover:bg-blue-600",
-                facebook: "bg-blue-700 hover:bg-blue-800",
                 instagram: "bg-pink-500 hover:bg-pink-600",
                 phone: "bg-green-500 hover:bg-green-600",
                 chat: "bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] hover:opacity-90",
               };
               const Icons = {
+                youtube: IoLogoYoutube,
                 telegram: FaTelegramPlane,
-                facebook: FaFacebookF,
                 instagram: FaInstagram,
                 phone: FaPhoneAlt,
                 chat: IoMdChatboxes,
@@ -45,13 +41,19 @@ const FloatingMenu = () => {
                 <a
                   key={item}
                   href={hrefs[item]}
-                  target={item === "phone" ? "_self" : "_blank"}
+                  target={
+                    item === "phone" || item === "chat" ? "_self" : "_blank" // 👈 chat uchun ham _self
+                  }
                   rel="noopener noreferrer"
-                  aria-label={`Go to ${item}`} // ✅ qo‘shildi
-                  title={`Go to ${item}`} // ✅ SEO uchun ham foydali
+                  aria-label={`Go to ${item}`}
+                  title={`Go to ${item}`}
                   className={`w-12 h-12 flex items-center justify-center rounded-full text-white shadow-lg transition-all duration-500 
     ${colors[item]} 
-    ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+    ${
+      open
+        ? "opacity-100 translate-y-0 pointer-events-auto"
+        : "opacity-0 translate-y-4 pointer-events-none"
+    }
   `}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >

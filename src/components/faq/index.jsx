@@ -35,7 +35,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="max-w-[1000px] mx-auto md:mt-10 mt-0 mb-[70px] md:mb-[140px] px-4">
+    <div id="faq" className="max-w-[1000px] mx-auto md:mt-10 mt-0 mb-[70px] md:mb-[140px] px-4">
       <h3 className="uppercase text-[#262626] text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] font-semibold text-center mb-[60px]">
         Frequently asked{" "}
         <span className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
