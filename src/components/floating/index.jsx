@@ -12,7 +12,7 @@ const FloatingMenu = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed flex flex-col items-end gap-3 z-50 bottom-8 right-8">
+    <div className="fixed flex flex-col items-end gap-3 z-5000 bottom-8 right-8">
       <div className="flex flex-col items-center z-50">
         {/* Social / Chat Icons */}
         <div className="flex flex-col items-center gap-3 mb-4">
