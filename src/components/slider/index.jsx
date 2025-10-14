@@ -44,7 +44,7 @@ const Slider = () => {
   const nextRef = useRef(null);
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 py-[100px] overflow-visible">
+    <div className="max-w-[1000px] mx-auto px-4 py-[100px] overflow-visible">
       <h3 className="text-center font-semibold text-[32px] md:text-[48px] text-[#262626]">
         BITIRGAN SHOGIRTLARIM BILAN TANISHING!
       </h3>
@@ -86,12 +86,12 @@ const Slider = () => {
       >
         {students.map((student, i) => (
           <SwiperSlide key={i}>
-            <div className="p-[2px] rounded-xl cursor-pointer my-10 bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] transition-all duration-300 hover:scale-105 hover:shadow-2xl relative">
-              <div className="bg-white rounded-xl p-[20px] flex flex-col gap-[20px]  h-[600px]">
+            <div className="p-[2px] max-w-[330px] w-full rounded-[12px] cursor-pointer my-10 bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]">
+              <div className="bg-white rounded-[12px] p-[20px] flex flex-col gap-[22px] h-[650px]">
                 <img
                   src={student.img}
                   alt={student.name}
-                  className="w-full h-[315px] object-cover rounded-lg"
+                  className="w-full h-[315px] object-cover rounded-[8px]"
                   loading="lazy"
                 />
                 <h3 className="font-semibold text-[#262626] text-[22px]">
@@ -118,3 +118,4 @@ const Slider = () => {
 };
 
 export default Slider;
+//transition-all duration-300 hover:scale-105 hover:shadow-2xl relative
