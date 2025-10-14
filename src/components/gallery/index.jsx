@@ -1,21 +1,24 @@
 import { useEffect, useRef } from "react";
+import gallery1 from "../../assets/images/gallery1.jpg";
+import gallery2 from "../../assets/images/gallery2.jpg";
+import gallery3 from "../../assets/images/gallery3.jpg";
+import gallery4 from "../../assets/images/gallery4.jpg";
+import gallery5 from "../../assets/images/gallery5.jpg";
+import gallery6 from "../../assets/images/gallery6.jpg";
+import gallery7 from "../../assets/images/gallery7.jpg";
+import gallery8 from "../../assets/images/gallery8.jpg";
+import gallery9 from "../../assets/images/gallery9.jpg";
+import gallery10 from "../../assets/images/gallery10.jpg";
+import gallery11 from "../../assets/images/gallery11.jpg";
+import gallery12 from "../../assets/images/gallery12.jpg";
+import gallery13 from "../../assets/images/gallery13.jpg";
+import gallery14 from "../../assets/images/gallery14.jpg";
+import gallery15 from "../../assets/images/gallery15.jpg";
 
 const images = {
-  column1: [
-    "https://th.bing.com/th/id/R.f171e004dc51b097c0c67a97e9c63260?rik=DrCCa6bmYw8Q6A&riu=http%3a%2f%2fimg.hipertextual.com%2fcontent%2fimages%2fsystem%2fhome_cover_1487382543596_2cf9e3.jpg&ehk=SdOAQW1W%2bLlFWYLPr3XE%2fyWE4s6pXVm%2fO6dOx%2bQdAAM%3d&risl=&pid=ImgRaw&r=0",
-    "https://ssl.cdn-redfin.com/photo/107/bigphoto/745/F10327745_0.jpg",
-    "https://tse3.mm.bing.net/th/id/OIP.-i8FQs4Q8GnnrQ2As-zefwHaE8?cb=12&w=2048&h=1367&rs=1&pid=ImgDetMain&o=7&rm=3",
-  ],
-  column2: [
-    "https://cruisepanda.com/storage/ports/K4xN9uNIStPH6yoASZcyl8TSziLJQiovgltFAG3H.jpg",
-    "https://tse1.mm.bing.net/th/id/OIP.6jZvHXWnXhXLTO9lfhpDiQHaE-?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
-    "https://s1.1zoom.me/big0/16/193345-foxixol.jpg",
-  ],
-  column3: [
-    "https://i.ytimg.com/vi/pkiiD4Xwm78/maxresdefault.jpg",
-    "https://cdn.pixabay.com/photo/2021/10/25/17/16/nature-6741602_960_720.jpg",
-    "https://th.bing.com/th/id/R.df2ff2ce40a990b47870a93ca47870a93ca47849ce?rik=uO0aXncYa13eUw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-AmCjK-g_Qfk%2fUVKu87v55lI%2fAAAAAAAAECU%2fLHZGYgJhWZw%2fs1600%2fnature-wallpaper-23.jpg&ehk=dWXQ35Xfbo0N55zCtFKc9rq1dFEB9IBNv%2fWMHkKoFSI%3d&risl=&pid=ImgRaw&r=0",
-  ],
+  column1: [gallery1, gallery2, gallery3, gallery4, gallery5],
+  column2: [gallery6, gallery7, gallery8, gallery9, gallery10],
+  column3: [gallery11, gallery12, gallery13, gallery14, gallery15],
 };
 
 const IMAGE_WIDTH = "w-[140px] sm:w-[290px]"; // Mobile: 140px, Desktop: 290px
@@ -75,7 +78,8 @@ const Gallery = () => {
     <div className="bg-gradient-to-b from-[#F0F3FF] to-[#D9ECFF] py-[100px]">
       <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h3 className="text-[28px] sm:text-[54px]  font-semibold mb-[80px] text-[#262626]">
-          Our Gallery
+          Quyida So‘nggi Yillarda Jamoam Va Shogirdlarim Bilan Birgalikda
+          Erishgan Natijalarimizdan Ba’zilari Bilan Tanishing.
         </h3>
 
         <div className="flex justify-between gap-[20px]">

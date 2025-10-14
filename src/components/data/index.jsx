@@ -50,28 +50,37 @@ const Data = () => {
 
         {/* Description */}
         <div className="flex flex-col gap-[30px] mb-[80px]">
-          <p className="text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse.
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            ⚙️ NIMA UCHUN BU ISHLAYDI?
           </p>
-          <p className="text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            1. Mentorlar — haqiqiy ishlab chiquvchilar
           </p>
-          <p className="text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            Zarif Qodirov va Robocontest jamoasi — musobaqa g‘oliblari va
+            platforma yaratuvchilari.
           </p>
-          <p className="text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            Siz nazariy domlalar bilan emas, natija ko‘rsatgan ustozlar bilan
+            ishlaysiz.
+          </p>
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            2. Dars — har gal amaliy vazifa bilan yakunlanadi
+          </p>
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            Har bir mavzu so‘ngida real “coding challenge” mavjud.
+          </p>
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            Natijani ko‘rasiz, faqat tinglamaysiz.
+          </p>
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            3. Haftalik mentor feedback
+          </p>
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            Sizni kuzatib boruvchi ustoz — xatolaringizni to‘g‘rilab beradi.
+          </p>
+          <p className="capitalize text-[#FFFFFF] text-[14px] sm:text-[28px] font-[500]">
+            Har haftada sizning progress reportingiz tayyorlanadi.
           </p>
         </div>
 
@@ -83,7 +92,12 @@ const Data = () => {
               className="cursor-pointer bg-white text-[#1A1A1A] rounded-lg p-6 flex flex-col gap-4 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_10px_30px_rgba(31,179,245,0.4)]"
             >
               <div className="flex items-start gap-4">
-                <img src={check} alt="Check" className="md:w-8 w-[24px] h-auto" loading="lazy"/>
+                <img
+                  src={check}
+                  alt="Check"
+                  className="md:w-8 w-[24px] h-auto"
+                  loading="lazy"
+                />
                 <h3 className="sm:text-[28px] text-[14px] font-semibold">
                   {item.title}
                 </h3>
