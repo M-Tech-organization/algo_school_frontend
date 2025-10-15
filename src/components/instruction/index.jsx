@@ -1,5 +1,5 @@
 import instructor from "../../assets/instructor.png";
-import instruction from "../../assets/instruction.jpg";
+import zarif from "../../assets/zarif.png";
 import check from "../../assets/check.svg";
 
 const Instruction = () => {
@@ -24,15 +24,19 @@ const Instruction = () => {
           {/* Matn */}
           <div className="flex-1 flex flex-col gap-6 text-left">
             <h3 className="font-semibold text-[14px] sm:text-[28px]">
-              TANISHAYLIK <br />
-              Mening ismim — Zarif Qodirov <br />
-              Men 2010-Yilda TATUda O'qishni Boshladim.
+              👤 TANISHAYLIK <br />
+              Mening Ismim — Zarif Qodirov <br />
+              Men 2010-yilda TATUda o'qishni boshladim.
             </h3>
+            <p className="font-[400] text-[14px] sm:text-[24px] leading-relaxed">
+              Shaxsiy kompyuterim yo’qligi, sabab <br /> fleshkada kod yozib..
+            </p>
+            <p className="font-[400] text-[14px] sm:text-[24px] leading-relaxed">
+              Yuklab, yurib dasturlashni o’rganganman.
+            </p>
             <p className="capitalize font-[400] text-[14px] sm:text-[24px] leading-relaxed">
-              Hech qanday aloqasiz, faqat bilim bilan <br /> kirgan 4 talabadan
-              biriman. <br />
               O‘sha paytlar ICPC jamoasiga qo‘shilib, dasturlashda ilk xalqaro
-              tajribamni oldim. Bugun esa:
+              tajribamni oldim. <br /> Bugun esa:
             </p>
           </div>
 
@@ -40,14 +44,14 @@ const Instruction = () => {
           <div className="flex-shrink-0">
             <img
               loading="lazy"
-              src={instruction}
+              src={zarif}
               alt="Instructor"
               className="rounded-full w-[200px] h-[200px] sm:w-[350px] sm:h-[350px] object-cover border-4 border-white shadow-lg"
             />
           </div>
         </div>
 
-        <div className="flex flex-col justify-start items-start text-left mt-[20px]">
+        <div className="flex flex-col gap-[16px] justify-start items-start text-left mt-[20px]">
           <p className="capitalize font-[400] text-[14px] sm:text-[24px] leading-relaxed flex gap-2 items-center">
             <img src={check} alt="Image" />
             30 ta mamlakatda bo‘ldim, 500 ming dollarlik musobaqalarda <br />
@@ -57,6 +61,23 @@ const Instruction = () => {
             <img src={check} alt="Image" />
             150 mingdan ortiq foydalanuvchiga ega Robocontest <br />
             platformasining asoschilaridanman.
+          </p>
+          <p className="capitalize font-[400] text-[14px] sm:text-[24px] leading-relaxed flex gap-2 items-center">
+            <img src={check} alt="Image" />
+            “Sahiya” — BAA va Qatarda ishlatilayotgan Imkoniyati cheklangan
+            <br />
+            Insonlar uchun Yaratilgan dastur muallifiman.
+          </p>
+          <p className="capitalize font-[400] text-[14px] sm:text-[24px] leading-relaxed flex gap-2 items-center">
+            <img src={check} alt="Image" />
+            “AirPilot” — 100 ming dollarlik xalqaro mukofot sohibi bo‘lgan
+            ta’lim <br /> o‘yini Mentoriman.
+          </p>
+          <p className="capitalize font-[400] text-[14px] sm:text-[24px] leading-relaxed flex gap-2 items-center">
+            <img src={check} alt="Image" />
+            Microsoft, Google Hamda boshqa Yetakchi Xalqaro Kompaniyalarida <br />
+            ishlayotgan o‘nlab shogirdlarim bor — ularning bari shu yo‘ldan
+            o‘tgan.
           </p>
         </div>
       </div>

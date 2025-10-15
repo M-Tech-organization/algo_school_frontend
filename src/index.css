@@ -187,3 +187,22 @@ html {
   }
 }
 
+/* dots’ni pastga tushirish */
+.ant-carousel .slick-dots {
+  position: static !important; /* orqa fon emas, pastda chiqadi */
+  margin-top: 40px; /* rasm bilan orasi ochiladi */
+}
+
+/* dots’ni chiroyli qilish (ixtiyoriy) */
+.ant-carousel .slick-dots li button {
+  background: #ccc;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background: #000;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+}

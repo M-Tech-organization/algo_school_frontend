@@ -78,25 +78,25 @@ const Navbar = () => {
               loading="lazy"
               src={line}
               alt="Line"
-              className="absolute -top-[20px] xs:-top-[25px] left-2 xs:left-4 sm:left-8 md:left-20 w-5 xs:w-6 sm:w-8 z-0 pointer-events-none"
+              className="absolute -left-[25px] -top-[25px]  w-5 xs:w-6 sm:w-8 z-0 pointer-events-none"
             />
           </div>
 
           {/* Title Card */}
-          <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:p-6 mb-8 sm:mb-[80px] z-10 max-w-[1000px] w-full mx-auto">
+          <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:py-6 mb-8 sm:mb-[80px] z-10 max-w-[1000px] w-full mx-auto">
             {/* Logo + Unlock Your */}
-            <div className="flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
-              <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
+            <div className="uppercase flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
+              <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
                 Algo School
               </span>
-              <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 flex-shrink-0">
+              <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold text-gray-800 flex-shrink-0">
                 sizni chalkash
               </span>
             </div>
 
             {/* Potential Value */}
-            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 text-center mt-4 sm:mt-6">
-              nazariyadan olib chiqib, <br /> 90 kunda haqiqiy dasturchiga aylantiradi.
+            <h2 className="uppercase leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold text-gray-800 text-center mt-2">
+              nazariyadan olib chiqib, 90 kunda haqiqiy dasturchiga aylantiradi.
             </h2>
           </div>
 
