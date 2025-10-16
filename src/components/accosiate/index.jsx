@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import partner1 from "../../assets/partner1.png";
 import partner2 from "../../assets/partner2.png";
 import partner3 from "../../assets/partner3.png";
@@ -16,6 +17,9 @@ const Accosiate = () => {
     accosiate3,
   ];
 
+  // 📌 Carousel uchun ref yaratamiz
+  const carouselRef = useRef(null);
+
   return (
     <div className="bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]">
       <div className="text-center w-full max-w-[1000px] mx-auto px-4 py-[100px] flex flex-col gap-[100px]">
@@ -25,6 +29,7 @@ const Accosiate = () => {
 
         <div className="relative">
           <Carousel
+            ref={carouselRef} // 👈 ref biriktirildi
             autoplay
             dots
             infinite
@@ -49,7 +54,8 @@ const Accosiate = () => {
             {images.map((img, index) => (
               <div
                 key={index}
-                className="flex justify-center items-center w-full"
+                className="flex justify-center items-center w-full cursor-pointer"
+                onClick={() => carouselRef.current?.goTo(index)} // 👈 rasmga bosganda shu slaydga o'tadi
               >
                 <img
                   src={img}

@@ -38,7 +38,7 @@ const ColumnSlider = ({ images, speed = 1 }) => {
     const totalHeight = container.scrollHeight / 3; // 3 martaga duplicate qilingan
 
     const step = () => {
-      y += 0.5; // scroll tezligi, o'zgartirish mumkin
+      y += 2; // scroll tezligi, o'zgartirish mumkin
       if (y >= totalHeight) y = 0; // loop
       container.scrollTop = y;
       requestId = requestAnimationFrame(step);

@@ -13,6 +13,8 @@ import Slider from "../../components/slider";
 import Benefit from "../../components/benefit";
 import Accosiate from "../../components/accosiate";
 import Projects from "../../components/projects";
+import Bonus from "../../components/bonus";
+import Ability from "../../components/ability";
 
 const Home = () => {
   return (
@@ -23,7 +25,9 @@ const Home = () => {
       <Gallery />
       <Projects />
       <Data />
+      <Ability/>
       <Course />
+      <Bonus/>
       <Slider />
       <Discount />
       <Guarantee />

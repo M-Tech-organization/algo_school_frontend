@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import partner1 from "../../../../assets/partner1.png";
 import partner2 from "../../../../assets/partner2.png";
 import partner3 from "../../../../assets/partner3.png";
@@ -8,9 +9,13 @@ import { Carousel } from "antd";
 const Partner = () => {
   const images = [partner1, partner2, partner3, partner4, partner5];
 
+  // 👉 Carouselni boshqarish uchun ref
+  const carouselRef = useRef(null);
+
   return (
     <div className="w-full py-5 relative">
       <Carousel
+        ref={carouselRef}
         autoplay
         dots
         infinite
@@ -33,7 +38,11 @@ const Partner = () => {
         ]}
       >
         {images.map((img, index) => (
-          <div key={index} className="flex justify-center items-center w-full">
+          <div
+            key={index}
+            className="flex justify-center items-center w-full cursor-pointer"
+            onClick={() => carouselRef.current?.next()} // 👈 rasm bosilganda keyingi slaydga o'tadi
+          >
             <img
               src={img}
               alt={`partner-${index}`}
@@ -41,7 +50,7 @@ const Partner = () => {
                 width: "180px",
                 height: "130px",
                 objectFit: "contain",
-                borderRadius: "8px"
+                borderRadius: "8px",
               }}
             />
           </div>

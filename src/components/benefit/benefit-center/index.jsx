@@ -3,30 +3,25 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import Partner from "./partner";
 
-const videos = [
-  "https://youtu.be/BBvod49uySQ?si=uX_Vfj91nuad1dBm",
-  "https://youtu.be/v5PZw1Wr-l0?si=_g-WIax0iGUYBjn1",
-  "https://youtu.be/HI6gMkfRjE0?si=JGnSaceqCZUSvRFO",
-  "https://youtu.be/oiKj0Z_Xnjc?si=P_ADpnATfvNUB7Xt",
-  "https://youtu.be/-pF7Af2xAuQ?si=c4UsxL9-gfvuWeGj",
-  "https://youtu.be/cDNDVtoJhik?si=iuhKOuseAV54cy76",
+const images = [
+  "https://i.pinimg.com/originals/dc/55/a7/dc55a7baa9cbd457221ae6d12d9b1b51.jpg",
+  "https://th.bing.com/th/id/R.4a10cc5456ddb0170e461fc60b002a98?rik=E49HgzWnOvklZw&riu=http%3a%2f%2fbeddingnewsnow.com%2fwp-content%2fuploads%2f2024%2f06%2fphotos.png&ehk=Ko4PmfmN7jF%2baqhjYS9ihVYeD80x8yXuvld9vSOUIo8%3d&risl=&pid=ImgRaw&r=0",
+  "https://img.freepik.com/premium-photo/best-amazing-wonderful-this-photo-take-this-picture-your-work-ai-generated-top-lovely-photo_1169327-105130.jpg",
+  "https://photographyreal.com/wp-content/uploads/2024/03/Post-Processing-for-Editorial-Images.jpg",
+  "https://tse4.mm.bing.net/th/id/OIP.spIliNW2QPq2ndCzDXLdnQHaFj?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
 ];
-
-const convertToEmbed = (url) => {
-  const videoId = url.split("/").pop().split("?")[0];
-  return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=0`;
-};
 
 const BenefitCenter = () => {
   const [midIndex, setMidIndex] = useState(0);
-  const [leftIndex, setLeftIndex] = useState(videos.length - 1);
+  const [leftIndex, setLeftIndex] = useState(images.length - 1);
   const [rightIndex, setRightIndex] = useState(1);
 
+  // 📌 Indexlarni hisoblash
   useEffect(() => {
     if (midIndex === 0) {
-      setLeftIndex(videos.length - 1);
+      setLeftIndex(images.length - 1);
       setRightIndex(1);
-    } else if (midIndex === videos.length - 1) {
+    } else if (midIndex === images.length - 1) {
       setLeftIndex(midIndex - 1);
       setRightIndex(0);
     } else {
@@ -35,12 +30,12 @@ const BenefitCenter = () => {
     }
   }, [midIndex]);
 
-  const nextVideo = () => {
-    setMidIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
+  const nextImage = () => {
+    setMidIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  const prevVideo = () => {
-    setMidIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
+  const prevImage = () => {
+    setMidIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   return (
@@ -61,46 +56,43 @@ const BenefitCenter = () => {
           <button
             aria-label="leftButton"
             className="leftButton"
-            onClick={prevVideo}
+            onClick={prevImage}
           >
             <ArrowLeft size={30} />
           </button>
           <button
-            aria-label="leftButton"
+            aria-label="rightButton"
             className="rightButton"
-            onClick={nextVideo}
+            onClick={nextImage}
           >
             <ArrowRight size={30} />
           </button>
         </div>
 
+        {/* Rasmlar ko‘rinishi */}
         <div className="ImageSliderContainer mb-[20px] flex justify-center items-center gap-4">
-          <iframe
-            loading="lazy"
-            title="Previous video preview"
-            src={convertToEmbed(videos[leftIndex])}
-            className="leftImage aspect-video w-[200px] h-[120px]"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
+          {/* Chapdagi rasm */}
+          <img
+            src={images[leftIndex]}
+            alt="Previous"
+            className="leftImage w-[200px] h-[120px] object-contain opacity-60 hover:opacity-80 cursor-pointer transition-transform duration-300 hover:scale-105"
+            onClick={prevImage}
           />
-          <iframe
-            loading="lazy"
-            title="Main video player"
-            src={convertToEmbed(videos[midIndex])}
-            className="middleImage aspect-video w-[600px] h-[340px]"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
+          {/* O‘rtadagi rasm */}
+          <img
+            src={images[midIndex]}
+            alt="Current"
+            className="middleImage w-[600px] h-[340px] object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
           />
-          <iframe
-            loading="lazy"
-            title="Next video preview"
-            src={convertToEmbed(videos[rightIndex])}
-            className="rightImage aspect-video w-[200px] h-[120px]"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
+          {/* O‘ngdagi rasm */}
+          <img
+            src={images[rightIndex]}
+            alt="Next"
+            className="rightImage w-[200px] h-[120px] object-contain opacity-60 hover:opacity-80 cursor-pointer transition-transform duration-300 hover:scale-105"
+            onClick={nextImage}
           />
         </div>
-      </div>{" "}
+      </div>
     </div>
   );
 };

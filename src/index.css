@@ -206,3 +206,17 @@ html {
   display: flex !important;
   justify-content: center;
 }
+
+img:focus,
+img:active,
+button:focus,
+button:active,
+a:focus,
+a:active,
+.slick-slide:focus,
+.slick-slide div:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
