@@ -4,8 +4,6 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import person1 from "../../assets/person1.png";
-import person2 from "../../assets/person2.png";
 import person3 from "../../assets/person3.png";
 import top from "../../assets/top.png";
 import bottom from "../../assets/bottom.png";
@@ -15,13 +13,13 @@ const students = [
     name: "🎓 Muhammadkarim To'xtaboyev",
     desc1: "✅ Microsoft Developers Uzbekistan Community asoschisi va lideri.",
     desc2: "✅ Biznesni Rivojlantirish Bankida CTO lavozimida ishlaydi.",
-    img: person1,
+    video: "https://www.youtube.com/shorts/AYfy_K8Su6g",
   },
   {
     name: "🎓 Jamshid Farxodov",
     desc1: "✅ Huawei ICT musobaqasida 1-o‘rin (BAA).",
     desc2: "✅ Xitoyda 3-o‘rin, “Sahiya” loyihasi asoschilaridan.",
-    img: person2,
+    video: "https://www.youtube.com/shorts/3DiL_DOicAo",
   },
   {
     name: "🎓 Rahmonov Nazarboy",
@@ -29,7 +27,7 @@ const students = [
     desc2:
       "✅ 2023-yilda Singapurda First Global Challenge musobaqasida 3-o‘rin.",
     desc3: "✅ Present Tech Award’da 1-o‘rin.",
-    img: person3,
+    video: "https://www.youtube.com/shorts/Sz4trAKTukM",
   },
   {
     name: "🎓 Olimjonv Aziz",
@@ -37,13 +35,28 @@ const students = [
     desc2:
       "✅ 2023-yilda Singapurda First Global Challenge musobaqasida 3-o'rin.",
     desc3: "✅ Present Tech Award'da 1-o'rin.",
-    img: person3,
+    video: person3,
   },
 ];
 
 const Slider = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const convertToEmbed = (url) => {
+    if (!url) return "";
+    // Agar YouTube Shorts bo'lsa
+    if (url.includes("shorts")) {
+      const videoId = url.split("/shorts/")[1];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+    // Oddiy YouTube videolar uchun
+    if (url.includes("watch?v=")) {
+      const videoId = url.split("watch?v=")[1];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+    return url;
+  };
 
   return (
     <div className="bg-gradient-to-b from-[#F0F3FF] to-[#D9ECFF]">
@@ -108,12 +121,15 @@ const Slider = () => {
               <div className="flex justify-center w-full">
                 <div className="p-[2px] max-w-[330px] w-full rounded-[12px] cursor-pointer my-10 bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]">
                   <div className="bg-white rounded-[12px] p-[20px] flex flex-col gap-[22px] h-[650px]">
-                    <img
-                      src={student.img}
-                      alt={student.name}
-                      className="w-full h-[315px] object-cover rounded-[8px]"
+                    <iframe
+                      src={convertToEmbed(student.video)}
+                      title={student.name}
+                      className="w-full h-[315px] rounded-[8px]"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
                       loading="lazy"
-                    />
+                    ></iframe>
+
                     <h3 className="font-semibold text-[#262626] text-[22px]">
                       {student.name}
                     </h3>
@@ -148,7 +164,7 @@ const Slider = () => {
                 behavior: "smooth",
               });
             }}
-            className="cursor-pointer relative w-full sm:w-auto min-w-[280px] sm:min-w-[675px] h-16 sm:h-24 rounded-xl text-white font-bold text-[16px] sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group"
+            className="cursor-pointer relative w-full sm:w-auto min-w-[280px] sm:min-w-[675px] h-16 sm:h-24 rounded-xl text-white font-bold text-[14px] sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group"
           >
             <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-0.5">
               <span className="uppercase w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 group-hover:bg-white">

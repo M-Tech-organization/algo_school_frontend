@@ -1,4 +1,7 @@
-import content_register from "../../assets/content_register.jpg";
+import content_register from "../../assets/content_register.png";
+import content_register2 from "../../assets/content_register2.png";
+import content_register3 from "../../assets/content_register3.png";
+import content_register4 from "../../assets/content_register4.png";
 import { useState } from "react";
 import { Check, X, Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -22,56 +25,64 @@ const CourseTypes = () => {
 
   const courses = {
     junior: {
-      title: "Lorem ipsum dolor sit",
-      fixed_price: "$19",
-      price: "$0",
-      period: "month",
+      title: "🚀 Boshlayman! \n0 dan 90 kunda haqiqiy natija ko‘rmoqchiman",
+      fixed_price: "6.500.000",
+      price: "997.000",
+      period: "so'm",
       features: [
-        "Access to selected free courses.",
-        "Limited course materials and resources.",
-        "Basic community support.",
-        "No certification upon completion.",
-        "Ad-supported platform.",
+        "C++ asoslari va algoritmik fikrlashni tushunasiz",
+        "Codeforces’da 1200+ reytingga chiqasiz",
+        "Har darsda kod yozasiz, nazariyada emas",
+        "Shaxsiy mentor sizni 3 oy kuzatadi",
+        "Robocontest orqali real muammolarni yechasiz",
+        "Sertifikat + portfolio loyihalar bilan chiqasiz",
       ],
+      image: content_register,
     },
+
     middle: {
-      title: "Professional Package",
-      fixed_price: "$39",
-      price: "$29",
-      period: "month",
+      title: "📈Natijani ikki baravar oshirish uchun yozilaman",
+      fixed_price: "7.000.000",
+      price: "1.297.000",
+      period: "so'm",
       features: [
-        "Access to all standard courses.",
-        "Full course materials and resources.",
-        "Priority community support.",
-        "Certification upon completion.",
-        "Ad-free experience.",
+        "Data strukturasi va mashhur algoritmlarni o‘zlashtirasiz",
+        "Codeforces’da 1400+ reytingga chiqasiz",
+        "Amaliy loyihalar va portfolioga ega bo‘lasiz",
+        "Haftalik mentor feedback bilan harakatni yo‘qotmaysiz",
+        "Jamoaviy ishlash va real loyihalarda ishtirok etasiz",
       ],
+      image: content_register2,
     },
+
     senior: {
-      title: "Advanced Learning",
-      fixed_price: "$89",
-      price: "$59",
-      period: "month",
+      title: "🏆 “Senior bo‘lishga tayyorman”",
+      fixed_price: "8.500.000",
+      price: "1.497.000",
+      period: "so'm",
       features: [
-        "Access to all courses including advanced.",
-        "Premium materials and resources.",
-        "1-on-1 mentorship sessions.",
-        "Professional certification.",
-        "Career guidance and support.",
+        "Murakkab algoritmlar va optimallashtirishni o‘rganasiz",
+        "Codeforces’da 1700+ reytingga chiqasiz",
+        "Musobaqa strategiyasi va vaqt boshqaruvini o‘zlashtirasiz",
+        "Real startap loyihalarda ishtirok etasiz",
+        "Mentor nazoratida individual yechimlar ishlab chiqasiz",
       ],
+      image: content_register3,
     },
+
     master: {
-      title: "Master Package",
-      fixed_price: "$99",
-      price: "$99",
-      period: "month",
+      title: "👑 “Master darajasiga chiqaman”",
+      fixed_price: "11.500.000",
+      price: "4.797.000",
+      period: "so'm",
       features: [
-        "Unlimited access to all courses.",
-        "Exclusive master-level content.",
-        "Personal mentor assigned.",
-        "Industry-recognized certification.",
-        "Job placement assistance.",
+        "Codeforces Div.1 uchun tayyorlanasiz",
+        "Murakkab kombinatsion algoritmlarni o‘ylamasdan yechasiz",
+        "Global musobaqalar strategiyasini o‘zlashtirasiz",
+        "Shogirdlar tayyorlash ko‘nikmasini olasiz",
+        "Mentor sifatida jamoa boshqarish tajribasini olasiz",
       ],
+      image: content_register4,
     },
   };
 
@@ -161,6 +172,7 @@ const CourseTypes = () => {
       setLoading(false);
     }
   };
+
   // Modalni ochish
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -210,11 +222,14 @@ const CourseTypes = () => {
       />
 
       <div className="max-w-[1000px] mx-auto">
-        <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
+        <h3 className="text-xl sm:text-[25px] md:text-[30] lg:text-[35px] font-bold text-center mb-12">
           <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-            COURSE
-          </span>{" "}
-          <span className="text-gray-800">TYPES</span>
+            ENDI NAVBAT SIZDA:
+          </span>
+          <br />
+          <span className="text-gray-800">
+            DARAJANGIZNI TANLANG VA NATIJANGIZNI BOSHLANG
+          </span>
         </h3>
 
         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
@@ -236,14 +251,14 @@ const CourseTypes = () => {
             ))}
           </div>
 
-          <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-center justify-center px-4 md:px-8">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-15 items-start justify-center px-4 md:px-8">
             {/* Image block */}
             <div className="flex items-center justify-center mx-auto md:mx-0 order-first md:order-last">
               <img
                 loading="lazy"
-                src={content_register}
+                src={currentCourse.image}
                 alt="Image"
-                className="rounded-2xl max-w-[300px] xs:max-w-[340px] sm:max-w-[490px] w-full h-48 xs:h-56 sm:h-64 md:h-[410px] object-cover"
+                className="rounded-2xl w-[300px] xs:w-[340px] sm:w-[490px] h-48 xs:h-56 sm:h-64 md:h-[410px] object-cover select-none pointer-events-none"
               />
             </div>
 
@@ -251,27 +266,29 @@ const CourseTypes = () => {
             <div className="w-full max-w-[500px] text-left mx-auto">
               {/* Title */}
               <div className="mb-4">
-                <h3 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold text-[#262626]">
+                <h3 className="whitespace-pre-line text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold text-[#262626]">
                   {currentCourse.title}
                 </h3>
               </div>
 
               {/* Price */}
-              <div className="h-[50px] md:h-[80px] flex flex-wrap items-baseline gap-2">
-                <span className="text-[22px] sm:text-[24px] md:text-[28px] lg:text-[38px] line-through font-semibold text-[#B91C1C]">
+              <div className="min-h-[50px] md:min-h-[80px] flex flex-wrap items-baseline gap-2">
+                <span className="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[35px] line-through font-semibold text-[#B91C1C]">
                   {currentCourse.fixed_price}
                 </span>
-                <span className="text-[20px] md:text-[35px]">/</span>
-                <span className="text-[22px] sm:text-[24px] md:text-[28px] lg:text-[38px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
+                <span className="text-[18px] sm:text-[24px] md:text-[35px]">
+                  /
+                </span>
+                <span className="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[35px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
                   {currentCourse.price}
                 </span>
-                <span className="text-[#4C4C4D] text-[14px] md:text-[18px] font-medium">
+                <span className="text-[#4C4C4D] text-[12px] sm:text-[14px] md:text-[18px] font-medium">
                   {currentCourse.period}
                 </span>
               </div>
 
               {/* Features */}
-              <div className="h-[180px] md:h-[250px] mb-6 md:mb-8 overflow-y-auto space-y-2 md:space-y-3">
+              <div className="scrollbar-hide h-[180px] md:h-[270px] mb-6 md:mb-8 overflow-y-auto space-y-2 md:space-y-3 mt-[20px] sm:mt-0">
                 {currentCourse.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-2 md:gap-3">
                     <div className="mt-0.5 bg-[#DCF4FF] p-1 rounded-[4px] flex-shrink-0">
@@ -290,9 +307,9 @@ const CourseTypes = () => {
                   onClick={handleOpenModal}
                   className="relative cursor-pointer w-full max-w-[386px] h-[50px] md:h-[60px] rounded-[10px] text-white font-semibold text-[16px] md:text-[18px] overflow-hidden transition-all duration-300 group"
                 >
-                  <span className="absolute inset-0 rounded-[10px] bg-gradient-to-r from-blue-500 to-purple-600 p-[2px]">
+                  <span className="uppercase absolute inset-0 rounded-[10px] bg-gradient-to-r from-blue-500 to-purple-600 p-[2px]">
                     <span className="w-full h-full bg-transparent rounded-[8px] flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-[#262626]">
-                      GET STARTED
+                      Ro'yhatdan o'tish
                     </span>
                   </span>
                 </button>

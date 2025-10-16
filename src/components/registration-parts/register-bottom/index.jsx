@@ -12,7 +12,7 @@ const RegisterBottom = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "+998",
-    courseType: "Course Type",
+    courseType: "O'quv bosqichi",
     open: false,
   });
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -241,12 +241,12 @@ const RegisterBottom = () => {
         <div className="rounded-[20px] p-[2px] bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]">
           <div className="bg-white rounded-[18px] px-5 sm:px-6 md:px-10 lg:px-12 xl:px-[50px] py-[30px] sm:py-6 md:py-8 lg:py-10 xl:py-[60px]">
             <h3 className="text-[#1A1A1A] text-[20px] sm:text-[30px] md:text-[34px] lg:text-[38px] font-medium text-center mb-[30px]">
-              Lorem ipsum dolor sit amet consectetur.
+              RO’YXATDAN O’TISH UCHUN QUYIDAGI ANKETANI TO’LDIRING
             </h3>
 
             <p className="text-[#4C4C4D] text-[12px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] font-[400] text-left mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              consectetur adipiscing elit.
+              Ma’lumotlarni to‘ldiring va o‘zingizga mos bosqichni tanlang (1
+              daqiqa kifoya):
             </p>
 
             {message && (
@@ -311,7 +311,7 @@ const RegisterBottom = () => {
               {/* Course Type Custom Dropdown */}
               <div className="mb-[40px]">
                 <label className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#4C4C4D] mb-2 block">
-                  Course Type
+                  🎯 O‘quv bosqichini tanlang:
                 </label>
                 <div className="relative">
                   <div
@@ -335,24 +335,27 @@ const RegisterBottom = () => {
 
                   {formData.open && (
                     <ul className="absolute z-50 w-full mt-1 bg-white rounded-[8px] shadow-lg overflow-hidden border border-gray-200">
-                      {["Junior", "Middle", "Senior", "Master"].map(
-                        (option, idx) => (
-                          <li
-                            key={idx}
-                            onClick={() => {
-                              setFormData({
-                                ...formData,
-                                courseType: option,
-                                open: false,
-                              });
-                              setErrors({ ...errors, courseType: "" });
-                            }}
-                            className="px-4 py-2 cursor-pointer transition-all hover:text-white hover:bg-gradient-to-r hover:from-[#1FB3F5] hover:to-[#6651FF]"
-                          >
-                            {option}
-                          </li>
-                        )
-                      )}
+                      {[
+                        "Junior — 997 000 so‘m / oyiga",
+                        " Middle — 1 297 000 so‘m / oyiga",
+                        " Senior — 1 497 000 so‘m / oyiga",
+                        " Master — 4 797 000 so‘m / oyiga",
+                      ].map((option, idx) => (
+                        <li
+                          key={idx}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              courseType: option,
+                              open: false,
+                            });
+                            setErrors({ ...errors, courseType: "" });
+                          }}
+                          className="px-4 py-2 cursor-pointer transition-all hover:text-white hover:bg-gradient-to-r hover:from-[#1FB3F5] hover:to-[#6651FF]"
+                        >
+                          {option}
+                        </li>
+                      ))}
                     </ul>
                   )}
                   {errors.courseType && (
@@ -363,8 +366,8 @@ const RegisterBottom = () => {
                 </div>
               </div>
 
-              <p className="text-[12px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[24px] font-[400] text-[#4C4C4D]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <p className="text-[12px] text-center sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[24px] font-[400] text-[#4C4C4D]">
+                👇TO‘LOV USULINI TANLANG:
               </p>
 
               {/* Payment Methods */}
@@ -504,7 +507,7 @@ const RegisterBottom = () => {
                             }
                             className="px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-3 lg:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-[6px] text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] font-[400] hover:from-blue-600 hover:to-purple-700 transition-all"
                           >
-                            Browse file
+                            Yuklash uchun bosing
                           </button>
                         </div>
                       </div>
@@ -524,7 +527,7 @@ const RegisterBottom = () => {
                   disabled={!canSubmit()}
                   className="uppercase w-full max-w-[251px] text-center py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-[6px] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-semibold hover:from-blue-600 hover:to-purple-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isLoading ? "Yuborilmoqda..." : "Verify"}
+                  {isLoading ? "Yuborilmoqda..." : "DAVOM ETISH"}
                 </button>
               </div>
             </form>

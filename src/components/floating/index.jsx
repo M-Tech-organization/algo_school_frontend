@@ -11,7 +11,7 @@ const FloatingMenu = () => {
       <div className="flex flex-col items-center z-50">
         {/* Social / Chat Icons */}
         <div className="flex flex-col items-center gap-3 mb-4">
-          {["telegram", "youtube", "instagram", "phone", "chat"].map(
+          {["youtube", "telegram", "instagram", "phone", "chat"].map(
             (item, index) => {
               const hrefs = {
                 youtube: "https://www.youtube.com/@AlgoSchool",

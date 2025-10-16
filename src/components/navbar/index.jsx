@@ -86,16 +86,16 @@ const Navbar = () => {
           <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:py-6 mb-8 sm:mb-[80px] z-10 max-w-[1000px] w-full mx-auto">
             {/* Logo + Unlock Your */}
             <div className="uppercase flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
-              <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
+              <span className="text-[10px] xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
                 Algo School
               </span>
-              <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold text-gray-800 flex-shrink-0">
+              <span className="text-[10px] xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold text-gray-800 flex-shrink-0">
                 sizni chalkash
               </span>
             </div>
 
             {/* Potential Value */}
-            <h2 className="uppercase leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold text-gray-800 text-center mt-2">
+            <h2 className="uppercase leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] text-[10px] xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold text-gray-800 text-center mt-2">
               nazariyadan olib chiqib, 90 kunda haqiqiy dasturchiga aylantiradi.
             </h2>
           </div>
@@ -124,7 +124,7 @@ const Navbar = () => {
                   behavior: "smooth",
                 });
               }}
-              className="cursor-pointer relative w-full sm:w-auto min-w-[280px] sm:min-w-[400px] h-16 sm:h-24 rounded-xl text-white font-bold text-xl sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group"
+              className="cursor-pointer relative w-full sm:w-auto min-w-[280px] sm:min-w-[400px] h-16 sm:h-24 rounded-xl text-white font-bold text-[14px] sm:text-3xl overflow-hidden transition-all duration-300 hover:text-gray-800 group"
             >
               <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-0.5">
                 <span className="uppercase w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 group-hover:bg-white">
