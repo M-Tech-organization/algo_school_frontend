@@ -66,12 +66,14 @@ const Slider = () => {
         {/* Tugmalar */}
         <div className="flex gap-5 justify-end my-[40px]">
           <button
+            aria-label="left-btn"
             ref={prevRef}
             className="bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] rounded-[8px] p-[15px]"
           >
             <ArrowLeft className="text-white text-[24px]" />
           </button>
           <button
+            aria-label="right-btn"
             ref={nextRef}
             className="bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] rounded-[8px] p-[15px]"
           >

@@ -44,6 +44,7 @@ const Partner = () => {
             onClick={() => carouselRef.current?.next()} // 👈 rasm bosilganda keyingi slaydga o'tadi
           >
             <img
+              loading="load"
               src={img}
               alt={`partner-${index}`}
               style={{

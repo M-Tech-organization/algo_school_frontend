@@ -74,9 +74,9 @@ const AbilityBottom = () => {
               <div className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] w-10 h-10 sm:w-12 sm:h-12 rounded-[15px] flex items-center justify-center text-white text-xl sm:text-2xl font-bold mx-auto mb-2 sm:mb-3">
                 {level}
               </div>
-              <h5 className="font-semibold text-sm sm:text-[19px] text-[#1A1A1A] mb-[25px]">
+              <h3 className="font-semibold text-sm sm:text-[19px] text-[#1A1A1A] mb-[25px]">
                 {title}
-              </h5>
+              </h3>
               <p className="text-xs sm:text-[18px] font-medium text-[#4C4C4D] leading-tight flex-grow">
                 {text}
               </p>

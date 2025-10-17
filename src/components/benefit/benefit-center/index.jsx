@@ -77,9 +77,11 @@ const BenefitCenter = () => {
             alt="Previous"
             className="leftImage w-[200px] h-[120px] object-contain opacity-60 hover:opacity-80 cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={prevImage}
+            loading="load"
           />
           {/* O‘rtadagi rasm */}
           <img
+            loading="load"
             src={images[midIndex]}
             alt="Current"
             className="middleImage w-[600px] h-[340px] object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
@@ -90,6 +92,7 @@ const BenefitCenter = () => {
             alt="Next"
             className="rightImage w-[200px] h-[120px] object-contain opacity-60 hover:opacity-80 cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={nextImage}
+            loading="load"
           />
         </div>
       </div>

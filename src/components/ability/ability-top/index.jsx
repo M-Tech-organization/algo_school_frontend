@@ -61,6 +61,7 @@ const AbilityTop = () => {
             {/* Icon qismi */}
             <div className="bg-white shadow-lg flex justify-center items-center rounded-full p-3 sm:p-[12px]">
               <img
+                loading="load"
                 src={item.img}
                 className="w-[32px] sm:w-[36px] h-auto"
                 alt="icon"

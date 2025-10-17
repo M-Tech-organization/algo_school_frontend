@@ -12,6 +12,7 @@ const Projects = () => {
       <div className="p-[2px] rounded-[12px] bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]">
         <div className="flex flex-col md:flex-row items-center gap-[40px] md:gap-[60px] py-[42px] px-[35px] rounded-[12px] bg-white">
           <img
+            loading="load"
             src={projects1}
             alt="Image"
             className="max-w-[375px] w-full h-auto rounded-[8px]"
@@ -45,6 +46,7 @@ const Projects = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="max-w-[450px] w-full h-[253px] rounded-[8px]"
+              loading="load"
             ></iframe>
 
             <div>
@@ -73,6 +75,7 @@ const Projects = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="max-w-[450px] w-full h-[253px] rounded-[8px]"
+              loading="load"
             ></iframe>
 
             <div>

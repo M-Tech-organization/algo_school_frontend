@@ -321,6 +321,7 @@ const Bonus = () => {
                 className="w-full flex flex-col md:flex-row items-center bg-[#4C0070]/20 text-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
               >
                 <img
+                  lazy="load"
                   src={bonus.img}
                   alt="Image"
                   className="w-full max-w-[160px] h-auto object-cover"

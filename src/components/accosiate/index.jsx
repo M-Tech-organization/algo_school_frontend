@@ -58,6 +58,7 @@ const Accosiate = () => {
                 onClick={() => carouselRef.current?.goTo(index)} // 👈 rasmga bosganda shu slaydga o'tadi
               >
                 <img
+                  loading="load"
                   src={img}
                   alt={`partner-${index}`}
                   className="mx-auto"
