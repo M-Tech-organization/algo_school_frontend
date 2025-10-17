@@ -1,13 +1,9 @@
 import thanks from "../../assets/thanks.png";
-import thanks2 from "../../assets/thanks2.png";
 import thanks_logo from "../../assets/thanks_logo.png";
-import { useNavigate } from "react-router-dom";
 
 const Thanks = () => {
-  const navigate = useNavigate(); // navigation hook
-
   const handleBackHome = () => {
-    navigate("/"); // Home sahifaga qaytadi
+    window.location.href = "https://t.me/AlgoSchoolHelp";
   };
 
   return (
@@ -30,31 +26,30 @@ const Thanks = () => {
         {/* Title */}
         <h1 className="text-2xl md:text-[38px] font-semibold">
           <span className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent">
-            Thank You
+            🎉TABRIKLAYMIZ!
           </span>
         </h1>
         {/* Description */}
         <p className="text-[#262626] text-sm sm:text-[28px] leading-relaxed ">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim.
+          Algo School o‘quv dasturiga muvaffaqiyatli ro‘yxatdan o‘tdingiz!{" "}
+          <br /> Siz endi O‘zbekistondagi eng kuchli dasturchilar safarining bir
+          qismisiz. <br />
+          <br /> Eslatma: Adminlarimiz 24 soat ichida siz bilan bog‘lanadi va
+          sizni rasmiy guruhga qo‘shadi. <br />
+          <br /> 💬 So‘nggi bir qadam: Iltimos, to‘lov chekini quyidagi Telegram
+          akkauntga yuboring, shunda sizni mentorlar va o‘quvchilar guruhiga
+          qo‘shamiz 👇
         </p>
-        {/* Illustration */}
-        <img
-          loading="lazy"
-          src={thanks2}
-          alt="Thank You Illustration"
-          className="max-w-[350px] w-full h-auto"
-        />
+
         {/* Register Button */}
         <div className="flex justify-center mb-8 sm:mb-12">
           <button
             onClick={handleBackHome}
-            className="cursor-pointer relative w-full sm:w-auto min-w-[280px] sm:min-w-[300px] h-16 sm:h-18 rounded-[10px] text-white font-bold text-xl sm:text-[26px] overflow-hidden transition-all duration-300 hover:text-gray-800 group"
+            className="cursor-pointer relative w-full sm:w-auto min-w-[280px] sm:min-w-[430px] h-16 sm:h-18 rounded-[10px] text-white font-bold text-xl sm:text-[26px] overflow-hidden transition-all duration-300 hover:text-gray-800 group"
           >
             <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] p-0.5">
               <span className="w-full h-full bg-transparent rounded-[10px] flex items-center justify-center transition-all duration-300 group-hover:bg-white">
-                Back to home
+                ALGO SCHOOL HELP
               </span>
             </span>
           </button>

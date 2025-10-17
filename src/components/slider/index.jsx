@@ -4,7 +4,6 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import person3 from "../../assets/person3.png";
 import top from "../../assets/top.png";
 import bottom from "../../assets/bottom.png";
 
@@ -30,12 +29,11 @@ const students = [
     video: "https://www.youtube.com/shorts/Sz4trAKTukM",
   },
   {
-    name: "🎓 Olimjonv Aziz",
-    desc1: "✅ Qatarda tahsil oladi.",
-    desc2:
-      "✅ 2023-yilda Singapurda First Global Challenge musobaqasida 3-o'rin.",
-    desc3: "✅ Present Tech Award'da 1-o'rin.",
-    video: person3,
+    name: "🎓 Sizning Ismingiz",
+    desc1: "",
+    desc2: "",
+    desc3: "",
+    video: "https://www.youtube.com/shorts/cK2GO9VSj0c",
   },
 ];
 
@@ -45,17 +43,18 @@ const Slider = () => {
 
   const convertToEmbed = (url) => {
     if (!url) return "";
-    // Agar YouTube Shorts bo'lsa
+
+    let videoId = "";
+
+    // Agar shorts bo'lsa, uni watch linkga aylantiramiz
     if (url.includes("shorts")) {
-      const videoId = url.split("/shorts/")[1];
-      return `https://www.youtube.com/embed/${videoId}`;
+      videoId = url.split("/shorts/")[1].split("?")[0];
+    } else if (url.includes("watch?v=")) {
+      videoId = url.split("watch?v=")[1].split("&")[0];
     }
-    // Oddiy YouTube videolar uchun
-    if (url.includes("watch?v=")) {
-      const videoId = url.split("watch?v=")[1];
-      return `https://www.youtube.com/embed/${videoId}`;
-    }
-    return url;
+
+    // Oddiy embed
+    return `https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&controls=1`;
   };
 
   return (
@@ -119,28 +118,33 @@ const Slider = () => {
           {students.map((student, i) => (
             <SwiperSlide key={i}>
               <div className="flex justify-center w-full">
-                <div className="p-[2px] max-w-[330px] w-full rounded-[12px] cursor-pointer my-10 bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]">
-                  <div className="bg-white rounded-[12px] p-[20px] flex flex-col gap-[22px] h-[650px]">
-                    <iframe
-                      src={convertToEmbed(student.video)}
-                      title={student.name}
-                      className="w-full h-[315px] rounded-[8px]"
-                      allow="autoplay; encrypted-media"
-                      allowFullScreen
-                      loading="lazy"
-                    ></iframe>
+                <div className="p-[1.5px] max-w-[330px] w-full rounded-[12px] cursor-pointer my-10 bg-gradient-to-r from-[#1FB3F5] to-[#6651FF]">
+                  <div className="bg-white rounded-[12px] p-[20px] flex flex-col gap-[22px] h-[550px]">
+                    <div
+                      className="w-full relative"
+                      style={{ paddingTop: "100%" }}
+                    >
+                      <iframe
+                        src={convertToEmbed(student.video)}
+                        title={student.name}
+                        className="absolute top-0 left-0 w-full h-full rounded-[8px]"
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
 
-                    <h3 className="font-semibold text-[#262626] text-[22px]">
+                    <h3 className="font-semibold text-[#262626] text-[16px]">
                       {student.name}
                     </h3>
-                    <p className="text-[18px] text-[#262626] font-medium">
+                    <p className="text-[14px] text-[#262626] font-medium">
                       {student.desc1}
                     </p>
-                    <p className="text-[18px] text-[#262626] font-medium">
+                    <p className="text-[14px] text-[#262626] font-medium">
                       {student.desc2}
                     </p>
                     {student.desc3 && (
-                      <p className="text-[18px] text-[#262626] font-medium">
+                      <p className="text-[14px] text-[#262626] font-medium">
                         {student.desc3}
                       </p>
                     )}

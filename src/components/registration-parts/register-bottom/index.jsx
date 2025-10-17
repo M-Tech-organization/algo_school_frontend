@@ -335,27 +335,24 @@ const RegisterBottom = () => {
 
                   {formData.open && (
                     <ul className="absolute z-50 w-full mt-1 bg-white rounded-[8px] shadow-lg overflow-hidden border border-gray-200">
-                      {[
-                        "Junior — 997 000 so‘m / oyiga",
-                        " Middle — 1 297 000 so‘m / oyiga",
-                        " Senior — 1 497 000 so‘m / oyiga",
-                        " Master — 4 797 000 so‘m / oyiga",
-                      ].map((option, idx) => (
-                        <li
-                          key={idx}
-                          onClick={() => {
-                            setFormData({
-                              ...formData,
-                              courseType: option,
-                              open: false,
-                            });
-                            setErrors({ ...errors, courseType: "" });
-                          }}
-                          className="px-4 py-2 cursor-pointer transition-all hover:text-white hover:bg-gradient-to-r hover:from-[#1FB3F5] hover:to-[#6651FF]"
-                        >
-                          {option}
-                        </li>
-                      ))}
+                      {["Junior", "Middle", "Senior", "Master"].map(
+                        (option, idx) => (
+                          <li
+                            key={idx}
+                            onClick={() => {
+                              setFormData({
+                                ...formData,
+                                courseType: option,
+                                open: false,
+                              });
+                              setErrors({ ...errors, courseType: "" });
+                            }}
+                            className="px-4 py-2 cursor-pointer transition-all hover:text-white hover:bg-gradient-to-r hover:from-[#1FB3F5] hover:to-[#6651FF]"
+                          >
+                            {option}
+                          </li>
+                        )
+                      )}
                     </ul>
                   )}
                   {errors.courseType && (
@@ -458,7 +455,7 @@ const RegisterBottom = () => {
                               Karta raqami:
                             </p>
                             <p className="text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#1A1A1A]">
-                              1234 0000 1234 1232
+                              9860 3501 4198 6900
                             </p>
                           </div>
                           <div className="flex items-center gap-[20px]">
@@ -479,15 +476,20 @@ const RegisterBottom = () => {
                       <label className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[22px] font-medium text-[#4C4C4D] mb-6 block">
                         Chekni yuklang *
                       </label>
-                      <div className="flex gap-3 items-center bg-gradient-to-b from-[#F0F3FF] to-[#D9ECFF] w-full px-4 sm:px-6 md:px-8 lg:px-10 py-8 sm:py-10 md:py-12 lg:py-14 rounded-lg">
-                        <label className="flex-1 flex items-center justify-start gap-3 sm:gap-4 md:gap-5 lg:gap-6 cursor-pointer">
+
+                      <div className="flex flex-wrap items-center justify-between gap-3 bg-gradient-to-b from-[#F0F3FF] to-[#D9ECFF] w-full px-4 sm:px-6 md:px-8 lg:px-10 py-8 sm:py-10 md:py-12 lg:py-14 rounded-lg">
+                        <label className="flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 cursor-pointer flex-1 min-w-0">
                           <img
                             loading="lazy"
                             src={upload}
                             alt="Upload"
                             className="w-[24px] sm:w-[28px] md:w-[32px] lg:w-[34px] h-[24px] sm:h-[28px] md:h-[32px] lg:h-[34px]"
                           />
-                          <span className="text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] text-[#262626] font-medium truncate">
+                          <span
+                            className="text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px]
+                     text-[#262626] font-medium truncate overflow-hidden whitespace-nowrap
+                     block max-w-[150px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[400px]"
+                          >
                             {uploadedFile ? uploadedFile.name : "Upload file"}
                           </span>
                           <input
@@ -497,6 +499,7 @@ const RegisterBottom = () => {
                             accept="image/jpeg,image/jpg,image/png,image/gif,application/pdf"
                           />
                         </label>
+
                         <div className="border-dashed border-2 border-gray-400 p-2 rounded-[8px] bg-white flex-shrink-0">
                           <button
                             type="button"
@@ -505,12 +508,16 @@ const RegisterBottom = () => {
                                 .querySelector('input[type="file"]')
                                 .click()
                             }
-                            className="px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-3 lg:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-[6px] text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] font-[400] hover:from-blue-600 hover:to-purple-700 transition-all"
+                            className="px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-3 lg:py-4 
+                     bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-[6px] 
+                     text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] font-[400] 
+                     hover:from-blue-600 hover:to-purple-700 transition-all"
                           >
                             Yuklash uchun bosing
                           </button>
                         </div>
                       </div>
+
                       {errors.file && (
                         <p className="text-red-500 text-sm mt-2">
                           {errors.file}

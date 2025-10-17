@@ -1,5 +1,4 @@
 import projects1 from "../../assets/projects1.png";
-import projects2 from "../../assets/projects2.png";
 
 const Projects = () => {
   return (
@@ -39,11 +38,15 @@ const Projects = () => {
         <div className="flex flex-col lg:flex-row">
           {/* Card 1 */}
           <div className="flex flex-col items-center py-[40px] px-[20px] rounded-t-[12px] lg:rounded-l-[12px] lg:rounded-tr-none bg-white w-full">
-            <img
-              src={projects2}
-              alt="Image"
-              className="max-w-[450px] w-full h-auto rounded-[8px]"
-            />
+            <iframe
+              src="https://www.youtube.com/embed/6rdRvh6tTa4"
+              title="YouTube video player"
+              style={{ border: "none" }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="max-w-[450px] w-full h-[253px] rounded-[8px]"
+            ></iframe>
+
             <div>
               <h3 className="text-left font-semibold mt-[40px] text-[14px] sm:text-[22px] text-[#262626]">
                 ✈️AIRPILOT — TA’LIM VA O‘YINNI BIRLASHTIRGAN GLOBAL LOYIHA
@@ -63,11 +66,15 @@ const Projects = () => {
 
           {/* Card 2 */}
           <div className="flex flex-col items-center py-[40px] px-[20px] rounded-b-[12px] lg:rounded-r-[12px] lg:rounded-bl-none bg-white w-full">
-            <img
-              src={projects2}
-              alt="Image"
-              className="max-w-[450px] w-full h-auto rounded-[8px]"
-            />
+            <iframe
+              src="https://www.youtube.com/embed/ZlRVMOKZ6qQ"
+              title="YouTube video player"
+              style={{ border: "none" }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="max-w-[450px] w-full h-[253px] rounded-[8px]"
+            ></iframe>
+
             <div>
               <h3 className="text-left mt-[20px] font-semibold text-[14px] sm:text-[22px] text-[#262626]">
                 🧠SAHIYA — Nuqsoni bor insonlar uchun “sun’iy intellekt” orqali
