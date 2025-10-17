@@ -15,7 +15,7 @@ const FloatingMenu = () => {
             (item, index) => {
               const hrefs = {
                 youtube: "https://www.youtube.com/@AlgoSchool",
-                telegram: "@AlgoSchoolHelp",
+                telegram: "https://t.me/AlgoSchoolHelp",
                 instagram:
                   "https://www.instagram.com/algoschool.uz?igsh=MW50Y3ZocGN0MmZ1Mg==",
                 phone: "tel:+998908086383",

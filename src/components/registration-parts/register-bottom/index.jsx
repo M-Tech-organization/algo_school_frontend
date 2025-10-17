@@ -22,7 +22,6 @@ const RegisterBottom = () => {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
 
-  // Validatsiya funksiyalari
   const validateFullName = (name) => {
     if (!name.trim()) {
       return "To'liq ism kiritish majburiy";
@@ -30,8 +29,9 @@ const RegisterBottom = () => {
     if (name.trim().length < 3) {
       return "Ism kamida 3 ta belgidan iborat bo'lishi kerak";
     }
-    if (!/^[a-zA-Z\s\u0400-\u04FF]+$/.test(name)) {
-      return "Ism faqat harflardan iborat bo'lishi kerak";
+    // Apostrof (') belgisi uchun ruxsat berildi
+    if (!/^[a-zA-Z\s\u0400-\u04FF']+$/.test(name)) {
+      return "Ism faqat harflar va apostrof belgidan iborat bo'lishi kerak";
     }
     return "";
   };
@@ -446,7 +446,7 @@ const RegisterBottom = () => {
                             className="w-[36px] h-[36px]"
                           />
                           <p className="text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#262626]">
-                            Card
+                            Card  - To‘lovni quyidagi karta raqamiga o‘tkazing:
                           </p>
                         </div>
                         <div className="flex-1">
@@ -463,7 +463,7 @@ const RegisterBottom = () => {
                               Qabul qiluvchi:
                             </p>
                             <p className="text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#1A1A1A]">
-                              "ABC Company" MCHJ
+                              SHOMURODOV ISKANDAR
                             </p>
                           </div>
                         </div>
@@ -472,7 +472,7 @@ const RegisterBottom = () => {
                   </div>
 
                   <div className="rounded-lg p-[2px] bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] mt-8">
-                    <div className="bg-white rounded-lg p-4 sm:p-6 md:p-8 lg:p-10">
+                    <div className="bg-white rounded-lg p-4 sm:p-6 md:p-8 lg:p-[30px]">
                       <label className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[22px] font-medium text-[#4C4C4D] mb-6 block">
                         Chekni yuklang *
                       </label>
