@@ -4,6 +4,7 @@ import hero1 from "../../assets/hero1.webp";
 import line from "../../assets/line.png";
 import top from "../../assets/top.png";
 import bottom from "../../assets/bottom.png";
+import logo2 from "../../assets/logo2.png";
 
 const Navbar = () => {
   const [showTop, setShowTop] = useState(true);
@@ -86,6 +87,13 @@ const Navbar = () => {
           <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:py-6 mb-8 sm:mb-[80px] z-10 max-w-[1000px] w-full mx-auto">
             {/* Logo + Unlock Your */}
             <div className="uppercase flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
+              <img
+                loading="lazy"
+                src={logo2}
+                alt="Image"
+                className="w-6 h-auto sm:w-7 md:w-8 lg:w-9 xl:w-10"
+              />
+
               <span className="text-[10px] xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
                 Algo School
               </span>
