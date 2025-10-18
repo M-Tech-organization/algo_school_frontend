@@ -342,9 +342,9 @@ const CourseTypes = () => {
 
             {/* Left side form */}
             <div className="w-full md:w-1/2 py-6 md:px-10 px-4 flex flex-col justify-center gap-4">
-              <h3 className="text-2xl font-semibold">Register for Course</h3>
+              <h3 className="text-2xl font-semibold">Kursga ro'yxatdan o'tish</h3>
               <h3 className="text-lg text-gray-500 mb-4">
-                Fill in your details
+                Tafsilotlaringizni to'ldiring
               </h3>
 
               {/* Full Name */}
@@ -353,7 +353,7 @@ const CourseTypes = () => {
                   htmlFor="fullName"
                   className="text-[#4C4C4D] text-[16px] font-medium mb-1"
                 >
-                  F.I.SH
+                  Toʻliq ism sharifingizni kiriting
                 </label>
                 <input
                   id="fullName"
@@ -380,7 +380,7 @@ const CourseTypes = () => {
                   htmlFor="phone"
                   className="text-[#4C4C4D] text-[16px] font-medium mb-1"
                 >
-                  Phone Number
+                  Telefon raqam
                 </label>
                 <input
                   id="phone"
@@ -407,7 +407,7 @@ const CourseTypes = () => {
                 className="w-full text-[16px] md:text-[18px] uppercase mt-4 md:mt-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-[8px] font-semibold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {loading && <Loader2 className="w-5 h-5 animate-spin" />}
-                {loading ? "Loading..." : success ? "Success!" : "Register"}
+                {loading ? "Loading..." : success ? "Success!" : "RO‘YXATDAN O'TISH"}
               </button>
             </div>
 
