@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, X } from "lucide-react";
-import hero1 from "../../assets/hero1.webp";
+import hero1 from "../../assets/hero1.jpg";
 import line from "../../assets/line.png";
 import top from "../../assets/top.png";
 import bottom from "../../assets/bottom.png";
@@ -40,7 +40,14 @@ const Navbar = () => {
           <div className="bg-gradient-to-r from-[#1FB3F5] to-[#6651FF] rounded-[8px] mt-4 py-3 px-4 flex items-center justify-center gap-3 absolute top-0 left-0 w-full z-50">
             {/* Matn va ArrowRight */}
             <div className="flex items-center justify-center gap-3 flex-1">
-              <h1 className="text-white font-normal text-[9px] sm:text-xs md:text-sm lg:text-base xl:text-lg text-center">
+              <h1
+                onClick={() => {
+                  document
+                    .getElementById("course")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="text-white cursor-pointer font-normal text-[9px] sm:text-xs md:text-sm lg:text-base xl:text-lg text-center"
+              >
                 “Kod yozishni o‘rganmoqchimisiz — lekin qayerdan boshlashni
                 bilmaysizmi?”{" "}
               </h1>
@@ -86,24 +93,24 @@ const Navbar = () => {
           {/* Title Card */}
           <div className="relative bg-white border border-gray-200 rounded-xl py-4 sm:py-6 mb-8 sm:mb-[80px] z-10 max-w-[1000px] w-full mx-auto">
             {/* Logo + Unlock Your */}
-            <div className="uppercase flex items-center justify-center gap-2 sm:gap-4 whitespace-nowrap">
+            <div className="uppercase flex flex-wrap items-center justify-center gap-2 sm:gap-4">
               <img
                 loading="lazy"
                 src={logo2}
                 alt="Image"
-                className="w-6 h-auto sm:w-7 md:w-8 lg:w-9 xl:w-10"
+                className="w-6 h-auto sm:w-7 md:w-8 lg:w-9 xl:w-10 flex-shrink-0"
               />
 
-              <span className="text-[10px] xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent flex-shrink-0">
+              <span className="text-[14px] sm:text-2xl md:text-4xl lg:text-[42px] font-bold bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] bg-clip-text text-transparent text-center break-words">
                 Algo School
               </span>
-              <span className="text-[10px] xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold text-gray-800 flex-shrink-0">
+              <span className="text-[14px] sm:text-2xl md:text-4xl lg:text-[42px] font-bold text-gray-800 text-center break-words">
                 sizni chalkash
               </span>
             </div>
 
             {/* Potential Value */}
-            <h2 className="uppercase leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] text-[10px] xs:text-2xl sm:text-3xl md:text-5xl lg:text-[48px] font-bold text-gray-800 text-center mt-2">
+            <h2 className="uppercase leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] text-[14px] sm:text-2xl md:text-4xl lg:text-[42px] font-bold text-gray-800 text-center mt-2 break-words">
               nazariyadan olib chiqib, 90 kunda haqiqiy dasturchiga aylantiradi.
             </h2>
           </div>

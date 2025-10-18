@@ -22,6 +22,14 @@ const RegisterBottom = () => {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
 
+  // Dropdown variantlari — label ko‘rsatiladi, value yuboriladi
+  const courseOptions = [
+    { label: "Junior — 997 000 so‘m / oyiga", value: "Junior" },
+    { label: "Middle — 1 297 000 so‘m / oyiga", value: "Middle" },
+    { label: "Senior — 1 497 000 so‘m / oyiga", value: "Senior" },
+    { label: "Master — 4 797 000 so‘m / oyiga", value: "Master" },
+  ];
+
   const validateFullName = (name) => {
     if (!name.trim()) {
       return "To'liq ism kiritish majburiy";
@@ -322,7 +330,8 @@ const RegisterBottom = () => {
                       errors.courseType ? "border-red-500" : "border-gray-400"
                     }`}
                   >
-                    {formData.courseType}
+                    {courseOptions.find((o) => o.value === formData.courseType)
+                      ?.label || "Course Type"}
                     <ChevronDown
                       className="w-6 h-6 transition-transform duration-300"
                       style={{
@@ -335,24 +344,22 @@ const RegisterBottom = () => {
 
                   {formData.open && (
                     <ul className="absolute z-50 w-full mt-1 bg-white rounded-[8px] shadow-lg overflow-hidden border border-gray-200">
-                      {["Junior", "Middle", "Senior", "Master"].map(
-                        (option, idx) => (
-                          <li
-                            key={idx}
-                            onClick={() => {
-                              setFormData({
-                                ...formData,
-                                courseType: option,
-                                open: false,
-                              });
-                              setErrors({ ...errors, courseType: "" });
-                            }}
-                            className="px-4 py-2 cursor-pointer transition-all hover:text-white hover:bg-gradient-to-r hover:from-[#1FB3F5] hover:to-[#6651FF]"
-                          >
-                            {option}
-                          </li>
-                        )
-                      )}
+                      {courseOptions.map(({ label, value }) => (
+                        <li
+                          key={value}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              courseType: value, // ✅ backendga yuboriladigan value shu
+                              open: false,
+                            });
+                            setErrors({ ...errors, courseType: "" });
+                          }}
+                          className="px-4 py-2 cursor-pointer transition-all hover:text-white hover:bg-gradient-to-r hover:from-[#1FB3F5] hover:to-[#6651FF]"
+                        >
+                          {label}
+                        </li>
+                      ))}
                     </ul>
                   )}
                   {errors.courseType && (
@@ -446,7 +453,7 @@ const RegisterBottom = () => {
                             className="w-[36px] h-[36px]"
                           />
                           <p className="text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#262626]">
-                            Card  - To‘lovni quyidagi karta raqamiga o‘tkazing:
+                            Card - To‘lovni quyidagi karta raqamiga o‘tkazing:
                           </p>
                         </div>
                         <div className="flex-1">
@@ -455,7 +462,7 @@ const RegisterBottom = () => {
                               Karta raqami:
                             </p>
                             <p className="text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#1A1A1A]">
-                              9860 3501 4198 6900
+                              5614 6822 1119 0105
                             </p>
                           </div>
                           <div className="flex items-center gap-[20px]">
@@ -463,7 +470,7 @@ const RegisterBottom = () => {
                               Qabul qiluvchi:
                             </p>
                             <p className="text-[10px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-medium text-[#1A1A1A]">
-                              SHOMURODOV ISKANDAR
+                              FOZILJON RUZMAMATOV
                             </p>
                           </div>
                         </div>

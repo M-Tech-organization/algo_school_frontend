@@ -85,10 +85,7 @@ const Slider = () => {
           modules={[Navigation, Autoplay]}
           spaceBetween={20}
           loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
+          autoplay={false}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current,

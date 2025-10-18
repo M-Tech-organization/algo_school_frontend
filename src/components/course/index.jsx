@@ -309,7 +309,7 @@ const CourseTypes = () => {
                 >
                   <span className="uppercase absolute inset-0 rounded-[10px] bg-gradient-to-r from-blue-500 to-purple-600 p-[2px]">
                     <span className="w-full h-full bg-transparent rounded-[8px] flex items-center justify-center transition-all duration-300 group-hover:bg-white group-hover:text-[#262626]">
-                      Ro'yhatdan o'tish
+                      Ro'yxatdan o'tish
                     </span>
                   </span>
                 </button>

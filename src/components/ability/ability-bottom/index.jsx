@@ -68,7 +68,7 @@ const AbilityBottom = () => {
         ].map(({ level, title, text }) => (
           <div
             key={level}
-            className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] p-[1.5px] rounded-[15px] flex"
+            className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] p-[1.5px] rounded-[15px] flex transition-transform hover:scale-105"
           >
             <div className="bg-white rounded-[15px] p-3 sm:p-4 text-center flex flex-col justify-start h-full min-h-[200px]">
               <div className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] w-10 h-10 sm:w-12 sm:h-12 rounded-[15px] flex items-center justify-center text-white text-xl sm:text-2xl font-bold mx-auto mb-2 sm:mb-3">

@@ -6,37 +6,37 @@ const data = [
     id: 1,
     img: logo2,
     title: "🎓 Algo Foundations dasturi",
-    price: " — 2 400 000",
+    price: " 2 400 000",
   },
   {
     id: 2,
     img: check,
     title: "Haftalik mentor feedback (12 sessiya)",
-    price: "— 1 200 000",
+    price: "1 200 000",
   },
   {
     id: 3,
     img: check,
     title: "Jamoa + Coworking zona kirishi",
-    price: " — 900 000",
+    price: " 900 000",
   },
   {
     id: 4,
     img: check,
     title: "Robocontest Premium darslarga kirish",
-    price: "— 700 000",
+    price: "700 000",
   },
   {
     id: 5,
     img: check,
     title: "Karyera va Frilans yo‘riqnomasi (Portfolio + CV)",
-    price: "— 800 000",
+    price: "800 000",
   },
   {
     id: 6,
     img: check,
     title: "Sertifikat + Tavsiyanoma xati",
-    price: "— 500 000 so‘m",
+    price: "500 000 so‘m",
   },
 ];
 

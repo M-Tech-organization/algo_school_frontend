@@ -14,11 +14,42 @@ import gallery12 from "../../assets/images/gallery12.jpg";
 import gallery13 from "../../assets/images/gallery13.jpg";
 import gallery14 from "../../assets/images/gallery14.jpg";
 import gallery15 from "../../assets/images/gallery15.jpg";
+import gallery16 from "../../assets/images/gallery16.png";
+import gallery17 from "../../assets/images/gallery17.png";
+import gallery18 from "../../assets/images/gallery18.png";
+import gallery19 from "../../assets/images/gallery19.png";
+import gallery20 from "../../assets/images/gallery20.png";
+import gallery21 from "../../assets/images/gallery21.png";
+// import gallery22 from "../../assets/images/gallery22.png";
 
 const images = {
-  column1: [gallery1, gallery2, gallery3, gallery4, gallery5],
-  column2: [gallery6, gallery7, gallery8, gallery9, gallery10],
-  column3: [gallery11, gallery12, gallery13, gallery14, gallery15],
+  column1: [
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    gallery5,
+    gallery16,
+    gallery17,
+  ],
+  column2: [
+    gallery6,
+    gallery7,
+    gallery8,
+    gallery9,
+    gallery10,
+    gallery18,
+    gallery19,
+  ],
+  column3: [
+    gallery11,
+    gallery12,
+    gallery13,
+    gallery14,
+    gallery15,
+    gallery20,
+    gallery21,
+  ],
 };
 
 const IMAGE_WIDTH = "w-[140px] sm:w-[290px]"; // Mobile: 140px, Desktop: 290px
@@ -38,7 +69,7 @@ const ColumnSlider = ({ images, speed = 1 }) => {
     const totalHeight = container.scrollHeight / 3; // 3 martaga duplicate qilingan
 
     const step = () => {
-      y += 2; // scroll tezligi, o'zgartirish mumkin
+      y += 1; // scroll tezligi, o'zgartirish mumkin
       if (y >= totalHeight) y = 0; // loop
       container.scrollTop = y;
       requestId = requestAnimationFrame(step);
