@@ -1,7 +1,5 @@
 import { useRef } from "react";
-import partner1 from "../../assets/partner1.png";
-import partner2 from "../../assets/partner2.png";
-import partner3 from "../../assets/partner3.png";
+
 import accosiate1 from "../../assets/accosiate1.png";
 import accosiate2 from "../../assets/accosiate2.png";
 import accosiate3 from "../../assets/accosiate3.png";
@@ -9,9 +7,6 @@ import { Carousel } from "antd";
 
 const Accosiate = () => {
   const images = [
-    partner1,
-    partner2,
-    partner3,
     accosiate1,
     accosiate2,
     accosiate3,

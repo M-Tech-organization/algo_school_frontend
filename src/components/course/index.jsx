@@ -1,4 +1,5 @@
 import content_register from "../../assets/content_register.png";
+import modal_register from "../../assets/modal_register.png";
 import content_register2 from "../../assets/content_register2.png";
 import content_register3 from "../../assets/content_register3.png";
 import content_register4 from "../../assets/content_register4.png";
@@ -288,7 +289,7 @@ const CourseTypes = () => {
               </div>
 
               {/* Features */}
-              <div className="scrollbar-hide h-[180px] md:h-[270px] mb-6 md:mb-8 overflow-y-auto space-y-2 md:space-y-3 mt-[20px] sm:mt-0">
+              <div className="scrollbar-hide h-[180px] md:h-[300px] mb-6 md:mb-8 overflow-y-auto space-y-2 md:space-y-3 mt-[20px] sm:mt-0">
                 {currentCourse.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-2 md:gap-3">
                     <div className="mt-0.5 bg-[#DCF4FF] p-1 rounded-[4px] flex-shrink-0">
@@ -414,7 +415,7 @@ const CourseTypes = () => {
             <div className="w-full md:w-1/2 flex items-center justify-center mt-6 md:mt-0 se-hide">
               <img
                 loading="lazy"
-                src="https://tse1.mm.bing.net/th/id/OIP.jleFhbOD3BG8h1PeUIGdNAHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+                src={modal_register}
                 alt="Modal Illustration"
                 className="w-[250px] md:w-[300px] h-[150px] md:h-[330px] object-cover"
               />

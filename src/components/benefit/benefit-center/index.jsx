@@ -1,14 +1,37 @@
 import benefit2 from "../../../assets/benefit2.png";
+import center1 from "../../../assets/benefit/center1.png";
+import center2 from "../../../assets/benefit/center2.png";
+import center3 from "../../../assets/benefit/center3.png";
+import center4 from "../../../assets/benefit/center4.png";
+import center5 from "../../../assets/benefit/center5.png";
+import center6 from "../../../assets/benefit/center6.png";
+import center7 from "../../../assets/benefit/center7.png";
+import center8 from "../../../assets/benefit/center8.png";
+import center9 from "../../../assets/benefit/center9.png";
+import center10 from "../../../assets/benefit/center10.png";
+import center11 from "../../../assets/benefit/center11.png";
+import center12 from "../../../assets/benefit/center12.png";
+import center13 from "../../../assets/benefit/center13.png";
+import center14 from "../../../assets/benefit/center14.jpg";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import Partner from "./partner";
 
 const images = [
-  "https://i.pinimg.com/originals/dc/55/a7/dc55a7baa9cbd457221ae6d12d9b1b51.jpg",
-  "https://th.bing.com/th/id/R.4a10cc5456ddb0170e461fc60b002a98?rik=E49HgzWnOvklZw&riu=http%3a%2f%2fbeddingnewsnow.com%2fwp-content%2fuploads%2f2024%2f06%2fphotos.png&ehk=Ko4PmfmN7jF%2baqhjYS9ihVYeD80x8yXuvld9vSOUIo8%3d&risl=&pid=ImgRaw&r=0",
-  "https://img.freepik.com/premium-photo/best-amazing-wonderful-this-photo-take-this-picture-your-work-ai-generated-top-lovely-photo_1169327-105130.jpg",
-  "https://photographyreal.com/wp-content/uploads/2024/03/Post-Processing-for-Editorial-Images.jpg",
-  "https://tse4.mm.bing.net/th/id/OIP.spIliNW2QPq2ndCzDXLdnQHaFj?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
+  center1,
+  center2,
+  center3,
+  center4,
+  center5,
+  center6,
+  center7,
+  center8,
+  center9,
+  center10,
+  center11,
+  center12,
+  center13,
+  center14,
 ];
 
 const BenefitCenter = () => {

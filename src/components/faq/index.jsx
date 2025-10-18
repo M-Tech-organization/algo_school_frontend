@@ -71,12 +71,20 @@ const faq = [
   {
     id: 12,
     question: "12. Kursni tugatgandan keyin nima bo‘ladi?",
-    answer: "Siz keyingi bosqichga o‘tasiz: Junior → Middle → Senior → Master  \n\nHar bosqichda sizga yangi darajadagi bilim, loyiha va imkoniyatlar ochiladi.\n\n“Bu kurs emas — bu sizning dasturchilik karerangizning yo‘l xaritasi.”",
+    answer:
+      "Siz keyingi bosqichga o‘tasiz: Junior → Middle → Senior → Master  \n\nHar bosqichda sizga yangi darajadagi bilim, loyiha va imkoniyatlar ochiladi.\n\n“Bu kurs emas — bu sizning dasturchilik karerangizning yo‘l xaritasi.”",
   },
   {
     id: 13,
     question: "13. Bonuslar haqida yana bir marta aytingchi?",
-    answer: "Erta ro‘yxatdan o‘tgan 30 ta o‘quvchiga: \n\n🎁 10% chegirma  \n🎁 Shaxsiy mentor chat  \n🎁 “Algo Map 90-kun rejalashtiradigan”  \n🎁 Robocontest Premium kirish  \n🎁 Maxsus Hoodie / Cap sovg‘alari",
+    answer:
+      "Erta ro‘yxatdan o‘tgan 30 ta o‘quvchiga: \n\n🎁 10% chegirma  \n🎁 Shaxsiy mentor chat  \n🎁 “Algo Map 90-kun rejalashtiradigan”  \n🎁 Robocontest Premium kirish  \n🎁 Maxsus Hoodie / Cap sovg‘alari",
+  },
+  {
+    id: 14,
+    question: "14. Agar kech qolsam nimani yo’qotaman?",
+    answer:
+      "1 oy o‘tib, o‘sha “bugun” boshlayman degan joyda yana bo’lasiz. \nAtrofdagilar ishga joylashadi — siz esa hali YouTube’da dars izlaysiz. \n\nHar oy 997 mingni tejayman deb, bir yillik imkoniyatni boy berasiz. \nAgar siz o‘rganishga jiddiy bo‘lmasangiz — bu kurs siz uchun emas. \nAmmo agar siz o‘z hayotingizni o‘zgartirmoqchi bo‘lsangiz — boshlash uchun ayni vaqt shu. \n\nAlgo School — bu oddiy kurs emas. \n\nBu — O‘zbekistondagi yangi avlod dasturchilari uchun eshik. \n\nU yerda siz: \n\nKodni tushunasiz. \nLoyihalar yaratasiz. \nMusobaqalarda qatnashasiz. \nVa eng muhimi — hayotingizni o‘zgartirasiz. \n\nBugun boshlamasangiz, 1 oy o‘tib ham xuddi shu joyda bo‘lasiz. \nLekin bugun yozilsangiz — 90 kunda natijani his qilasiz.",
   },
 ];
 
@@ -135,7 +143,7 @@ const Faq = () => {
                   className={`overflow-hidden transition-all duration-500 ease-in-out 
               ${
                 isActive
-                  ? "max-h-[500px] opacity-100 mt-3"
+                  ? "max-h-[1100px] opacity-100 mt-3"
                   : "max-h-0 opacity-0"
               }`}
                 >
