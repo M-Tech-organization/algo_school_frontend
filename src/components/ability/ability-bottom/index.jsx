@@ -43,7 +43,6 @@ const AbilityBottom = () => {
 
       {/* 4 Levels Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto my-6 sm:my-[40px]">
-        {/* Level Card */}
         {[
           {
             level: 1,
@@ -68,16 +67,16 @@ const AbilityBottom = () => {
         ].map(({ level, title, text }) => (
           <div
             key={level}
-            className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] p-[1.5px] rounded-[15px] flex transition-transform hover:scale-105"
+            className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] p-[1.5px] rounded-[15px] transition-transform hover:scale-105 h-full w-full"
           >
-            <div className="bg-white rounded-[15px] p-3 sm:p-4 text-center flex flex-col justify-start h-full min-h-[200px]">
+            <div className="bg-white rounded-[15px] p-3 sm:p-4 text-center flex flex-col justify-start h-full min-h-[230px]">
               <div className="bg-gradient-to-r from-[#6651FF] to-[#1FB3F5] w-10 h-10 sm:w-12 sm:h-12 rounded-[15px] flex items-center justify-center text-white text-xl sm:text-2xl font-bold mx-auto mb-2 sm:mb-3">
                 {level}
               </div>
-              <h3 className="font-semibold text-sm sm:text-[19px] text-[#1A1A1A] mb-[25px]">
+              <h3 className="font-semibold text-sm sm:text-[19px] text-[#1A1A1A] mb-[15px]">
                 {title}
               </h3>
-              <p className="text-xs sm:text-[18px] font-medium text-[#4C4C4D] leading-tight flex-grow">
+              <p className="text-xs sm:text-[16px] font-medium text-[#4C4C4D] leading-snug flex-grow">
                 {text}
               </p>
             </div>

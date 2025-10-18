@@ -302,35 +302,37 @@ const Bonus = () => {
             {[
               {
                 img: bonus5,
-                title: "🎁 Robocontest Premium Access (3 ta kursga kirish)",
-                text: "Qimmatli Premium kurslarga to'liq kirish — bepul.",
+                title: "🎁 Robocontest Premium Access (3 Ta Kursga Kirish)",
+                text: "Qimmatli Premium Kurslarga To'liq Kirish — Bepul.",
               },
               {
                 img: bonus6,
-                title: "🎁 Umrbod 20% chegirma",
-                text: "Robocontest va RoboticsLab loyihalarida barcha kurs va darsliklarga doimiy chegirma.",
+                title: "🎁 Umrbod 20% Chegirma",
+                text: "Robocontest Va RoboticsLab Loyihalarida Barcha Kurs Va Darsliklarga Doimiy Chegirma.",
               },
               {
                 img: bonus7,
-                title: "🎁 Mentorlar bilan maxsus uchrashuvlar",
-                text: "Siz faqat dars emas, real tajriba orttirasiz — xalqaro g'olib mentorlar bilan jonli muloqotda.",
+                title: "🎁 Mentorlar Bilan Maxsus Uchrashuvlar",
+                text: "Siz Faqat Dars Emas, Real Tajriba Orttirasiz — Xalqaro G'olib Mentorlar Bilan Jonli Muloqotda.",
               },
             ].map((bonus, i) => (
               <div
                 key={i}
-                className="w-full flex flex-col md:flex-row items-center bg-[#4C0070]/20 text-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+                className="w-full flex flex-col md:flex-row items-center bg-white/5 backdrop-blur-sm text-white rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-xl"
               >
-                <img
-                  lazy="load"
-                  src={bonus.img}
-                  alt="Image"
-                  className="w-full max-w-[160px] h-auto object-cover"
-                />
-                <div className="flex flex-col justify-center p-4 sm:p-5 text-center md:text-left">
-                  <h3 className="text-[14px] xs:text-[16px] sm:text-[20px] md:text-[26px] lg:text-[30px] font-medium mb-[12px] sm:mb-[16px] leading-tight">
+                <div className="bg-white min-w-[140px] w-[160px] h-[160px] flex justify-center items-center flex-shrink-0">
+                  <img
+                    loading="lazy"
+                    src={bonus.img}
+                    alt="Bonus"
+                    className="w-[110px] h-auto object-contain"
+                  />
+                </div>
+                <div className="flex flex-col justify-center p-5 sm:p-6 text-left w-full">
+                  <h3 className="text-[18px] sm:text-[22px] md:text-[26px] font-semibold mb-2 leading-tight">
                     {bonus.title}
                   </h3>
-                  <p className="text-[12px] xs:text-[14px] sm:text-[18px] md:text-[22px] lg:text-[24px] font-medium leading-relaxed">
+                  <p className="text-[14px] sm:text-[16px] md:text-[18px] font-normal leading-relaxed opacity-90">
                     {bonus.text}
                   </p>
                 </div>
