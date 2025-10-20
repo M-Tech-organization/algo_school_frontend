@@ -342,10 +342,10 @@ const CourseTypes = () => {
 
             {/* Left side form */}
             <div className="w-full md:w-1/2 py-6 md:px-10 px-4 flex flex-col justify-center gap-4">
-              <h3 className="text-2xl font-semibold">Kursga ro'yxatdan o'tish</h3>
-              <h3 className="text-lg text-gray-500 mb-4">
+              <h3 className="text-2xl font-semibold">Ro'yxatdan o'tish</h3>
+              {/* <h3 className="text-lg text-gray-500 mb-4">
                 Tafsilotlaringizni to'ldiring
-              </h3>
+              </h3> */}
 
               {/* Full Name */}
               <div className="flex flex-col">
@@ -353,7 +353,7 @@ const CourseTypes = () => {
                   htmlFor="fullName"
                   className="text-[#4C4C4D] text-[16px] font-medium mb-1"
                 >
-                  Toʻliq ism sharifingizni kiriting
+                  Ismingizni kiriting
                 </label>
                 <input
                   id="fullName"
@@ -361,7 +361,7 @@ const CourseTypes = () => {
                   type="text"
                   value={formData.full_name}
                   onChange={handleInputChange}
-                  placeholder="Enter your full name"
+                  placeholder="Kiriting"
                   className={`w-full p-3 border rounded-[8px] focus:outline-none ${
                     error.includes("ism")
                       ? "border-red-500 focus:border-red-500"
