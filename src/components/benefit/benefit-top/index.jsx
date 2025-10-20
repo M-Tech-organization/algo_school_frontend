@@ -3,7 +3,7 @@ import benefit1 from "../../../assets/benefit1.png";
 const BenefitTop = () => {
   return (
     <div
-      className="w-full min-h-[1200px] relative flex flex-col justify-center px-3 xs:px-4 sm:px-6 py-[40px] sm:py-[150px]"
+      className="w-full min-h-screen relative flex flex-col justify-center px-3 xs:px-4 sm:px-6 py-[50px] sm:py-[150px]"
       style={{
         backgroundImage: `url(${benefit1})`,
         backgroundSize: "cover",

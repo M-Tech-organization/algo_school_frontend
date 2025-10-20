@@ -106,7 +106,7 @@ const ColumnSlider = ({ images, speed = 1 }) => {
 
 const Gallery = () => {
   return (
-    <div className="bg-gradient-to-b from-[#F0F3FF] to-[#D9ECFF] py-[100px]">
+    <div className="bg-gradient-to-b from-[#F0F3FF] to-[#D9ECFF] py-[50px] sm:py-[100px]">
       <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h3 className="text-[28px] sm:text-[54px]  font-semibold mb-[80px] text-[#262626]">
           Quyida So‘nggi Yillarda Jamoam Va Shogirdlarim Bilan Birgalikda

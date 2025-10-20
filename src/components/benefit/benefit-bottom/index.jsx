@@ -5,7 +5,7 @@ import bottom from "../../../assets/bottom.png";
 const BenefitBottom = () => {
   return (
     <div
-      className="w-full min-h-[994px] relative flex flex-col justify-center px-3 xs:px-4 sm:px-6 py-[40px] sm:py-[80px]"
+      className="w-full min-h-[600px] relative flex flex-col justify-center px-3 xs:px-4 sm:px-6 py-[0px] sm:py-[80px]"
       style={{
         backgroundImage: `url(${benefit3})`,
         backgroundSize: "cover",

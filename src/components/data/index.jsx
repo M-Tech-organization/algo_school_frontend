@@ -33,7 +33,7 @@ const card = [
 const Data = () => {
   return (
     <div
-      className="w-full min-h-[1523px] relative text-white flex flex-col justify-center px-6 py-[100px]"
+      className="w-full min-h-screen relative text-white flex flex-col justify-center px-6 py-[50px] sm:py-[100px]"
       style={{
         backgroundImage: `url(${data})`,
         backgroundSize: "cover",

@@ -3,7 +3,7 @@ import information from "../../assets/information.png";
 const Hero = () => {
   return (
     <div
-      className="w-full relative text-white flex flex-col justify-center px-6 h-[1304px]"
+      className="w-full relative text-white flex flex-col justify-center px-6 min-h-screen py-[50px] sm:py-[100px]"
       style={{
         backgroundImage: `url(${information})`,
         backgroundSize: "100% 100%",
@@ -35,7 +35,7 @@ const Hero = () => {
             🔴Universitetdagi Dasrlar Nazariyada Qoladi, Amaliyot Esa Yo'q.
           </p>
           <p className="font-[400] text-[14px] sm:text-[18px] md:text-[24px] lg:text-[28px]">
-            🔴Har Safar "Bugun Boshlayman" Deysiz - Lekin Motivatsiya 3-Kun
+            🔴Har Safar "Bugun Boshlayman" Deysiz - Lekin Motivatsiya 3-Kunda
             Yo'qoladi.
           </p>
           <p className="font-[400] text-[14px] sm:text-[18px] md:text-[24px] lg:text-[28px]">

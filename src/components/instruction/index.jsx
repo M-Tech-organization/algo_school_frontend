@@ -5,7 +5,7 @@ import check from "../../assets/check.svg";
 const Instruction = () => {
   return (
     <div
-      className="w-full min-h-[874px] relative text-white flex flex-col justify-center px-6 py-[100px]"
+      className="w-full min-h-[874px] relative text-white flex flex-col justify-center px-6 py-[50px] sm:py-[100px]"
       style={{
         backgroundImage: `url(${instructor})`,
         backgroundSize: "cover", // ekranni to'liq egallaydi

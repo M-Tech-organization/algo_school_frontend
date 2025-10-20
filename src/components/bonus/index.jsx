@@ -318,7 +318,7 @@ const Bonus = () => {
             ].map((bonus, i) => (
               <div
                 key={i}
-                className="w-full flex flex-col md:flex-row items-center bg-white/5 backdrop-blur-sm text-white rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-xl"
+                className="w-full hover:scale-105 transition-transform duration-300 flex flex-col md:flex-row items-center bg-white/5 backdrop-blur-sm text-white rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-xl"
               >
                 <div className="bg-white min-w-[140px] w-[160px] h-[160px] flex justify-center items-center flex-shrink-0">
                   <img
