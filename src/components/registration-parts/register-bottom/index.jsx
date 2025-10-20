@@ -77,7 +77,7 @@ const RegisterBottom = () => {
       return "To'lov chekini yuklash majburiy";
     }
     if (file) {
-      const maxSize = 5 * 1024 * 1024; // 5MB
+      const maxSize = 50 * 1024 * 1024; // 5MB
       if (file.size > maxSize) {
         return "Fayl hajmi 5MB dan oshmasligi kerak";
       }

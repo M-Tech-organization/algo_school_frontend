@@ -98,7 +98,7 @@ const Faq = () => {
   return (
     <div
       id="faq"
-      className="max-w-[1000px] mx-auto md:mt-10 mt-0 mb-[70px] md:mb-[140px] px-4 py-[100px]"
+      className="max-w-[1000px] mx-auto px-4 py-[100px]"
     >
       <h3 className="uppercase text-[#262626] leading-tight sm:leading-snug md:leading-[1.2] lg:leading-[1.3] text-[20px] sm:text-5xl md:text-[54px] lg:text-[54px] font-semibold text-center mb-[60px]">
         Ko‘p so‘raladigan savollar{" "}
