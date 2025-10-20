@@ -28,13 +28,6 @@ const students = [
     desc3: "✅ Present Tech Award’da 1-o‘rin.",
     video: "https://www.youtube.com/shorts/Sz4trAKTukM",
   },
-  {
-    name: "🎓 Sizning Ismingiz",
-    desc1: "",
-    desc2: "",
-    desc3: "",
-    video: "https://www.youtube.com/shorts/cK2GO9VSj0c",
-  },
 ];
 
 const Slider = () => {
