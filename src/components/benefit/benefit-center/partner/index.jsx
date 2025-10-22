@@ -76,7 +76,7 @@ const Partner = ({ onImageClick }) => {
   const carouselRef = useRef(null);
 
   return (
-    <div className="w-full py-5 relative">
+    <div className="w-full py-5 relative max-w-[1000px] mx-auto">
       <Carousel
         ref={carouselRef}
         autoplay
