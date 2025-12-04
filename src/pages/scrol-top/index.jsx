@@ -2,11 +2,14 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // Faqat hash bo'lmasa tepaga chiqadi
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: "auto" }); // smooth o'rniga auto
+    }
+  }, [pathname, hash]);
 
   return null;
 };
